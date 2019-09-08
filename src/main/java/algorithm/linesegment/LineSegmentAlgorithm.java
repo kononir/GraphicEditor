@@ -1,6 +1,6 @@
 package algorithm.linesegment;
 
-import util.CustomPoint;
+import model.CustomPoint;
 
 import java.util.List;
 

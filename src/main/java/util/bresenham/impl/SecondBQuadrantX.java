@@ -1,7 +1,8 @@
-package algorithm.linesegment.impl.bresenham.quadrant;
+package util.bresenham.impl;
 
 import javafx.scene.paint.Color;
-import util.CustomPoint;
+import model.CustomPoint;
+import util.bresenham.BQuadrant;
 
 public class SecondBQuadrantX implements BQuadrant {
     private int x;
@@ -9,27 +10,27 @@ public class SecondBQuadrantX implements BQuadrant {
     private int z;
     private int t;
     private int e;
-    private int deltaX;
-    private int deltaY;
+    private int maxProjection;
+    private int minProjection;
 
-    public SecondBQuadrantX(int x, int y, int z, int t, int e, int deltaX, int deltaY) {
+    public SecondBQuadrantX(int x, int y, int z, int t, int e, int maxProjection, int minProjection) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.t = t;
         this.e = e;
-        this.deltaX = deltaX;
-        this.deltaY = deltaY;
+        this.maxProjection = maxProjection;
+        this.minProjection = minProjection;
     }
 
     @Override
     public CustomPoint calculateNextPoint() {
         if (e >= 0) {
             y++;
-            e -= 2 * deltaX;
+            e -= 2 * maxProjection;
         }
         x--;
-        e += 2 * deltaY;
+        e += 2 * minProjection;
 
         return new CustomPoint(x, y, z, t, Color.BLACK);
     }

@@ -1,4 +1,6 @@
-package algorithm.linesegment.impl.bresenham.quadrant;
+package util.bresenham;
+
+import util.bresenham.impl.*;
 
 public class BQuadrantFactory {
     public BQuadrant create(int x, int y, int z, int t, int e, int deltaX, int deltaY) {

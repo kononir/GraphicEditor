@@ -2,7 +2,7 @@ package algorithm.linesegment.impl;
 
 import algorithm.linesegment.LineSegmentAlgorithm;
 import javafx.scene.paint.Color;
-import util.CustomPoint;
+import model.CustomPoint;
 
 import java.util.ArrayList;
 import java.util.List;

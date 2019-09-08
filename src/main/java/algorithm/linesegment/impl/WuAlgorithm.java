@@ -1,15 +1,15 @@
-package algorithm.linesegment.impl.bresenham;
+package algorithm.linesegment.impl;
 
 import algorithm.linesegment.LineSegmentAlgorithm;
-import algorithm.linesegment.impl.bresenham.quadrant.BQuadrant;
-import algorithm.linesegment.impl.bresenham.quadrant.BQuadrantFactory;
 import javafx.scene.paint.Color;
-import util.CustomPoint;
+import model.CustomPoint;
+import util.wu.WuQuadrant;
+import util.wu.WuQuadrantFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BresenhamAlgorithm implements LineSegmentAlgorithm {
+public class WuAlgorithm implements LineSegmentAlgorithm {
     @Override
     public List<CustomPoint> generateLineSegment(CustomPoint startingPoint, CustomPoint endingPoint) {
         int x1 = (int) startingPoint.getX();
@@ -23,17 +23,18 @@ public class BresenhamAlgorithm implements LineSegmentAlgorithm {
         int deltaY = y2 - y1;
         int projectionX = Math.abs(deltaX);
         int projectionY = Math.abs(deltaY);
-        int maxProjection = Math.max(projectionX, projectionY);
-        int minProjection = Math.min(projectionX, projectionY);
 
-        int initialE = 2 * minProjection - maxProjection;
+        double maxProjection = Math.max(projectionX, projectionY);
+        double minProjection = Math.min(projectionX, projectionY);
+
+        double tangentAngle =  minProjection / maxProjection;
 
         List<CustomPoint> points = new ArrayList<>();
         points.add(new CustomPoint(x1, y1, z, t, Color.BLACK));
 
-        BQuadrant quadrant = new BQuadrantFactory().create(x1, y1, z, t, initialE, deltaX, deltaY);
+        WuQuadrant quadrant = new WuQuadrantFactory().create(x1, y1, z, t, tangentAngle, deltaX, deltaY);
         for (int i = 1; i <= maxProjection; i++) {
-            points.add(quadrant.calculateNextPoint());
+            points.addAll(quadrant.calculateNextPoints());
         }
 
         return points;

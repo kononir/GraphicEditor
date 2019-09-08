@@ -1,4 +1,4 @@
-package util;
+package model;
 
 import javafx.scene.paint.Color;
 

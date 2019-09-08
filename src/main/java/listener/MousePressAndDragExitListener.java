@@ -7,7 +7,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
-import util.CustomPoint;
+import model.CustomPoint;
+import ui.CanvasDrawer;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,9 +27,7 @@ public class MousePressAndDragExitListener {
             Optional<Toggle> selected = Optional.ofNullable(toggleGroup.getSelectedToggle());
             selected.ifPresent(toggle -> {
                 AlgorithmType selectedAlgorithm = (AlgorithmType) toggle.getUserData();
-                AlgorithmGroup selectedAlgorithmGroup = selectedAlgorithm.getGroup();
-
-                if (selectedAlgorithmGroup.equals(AlgorithmGroup.LINE_SEGMENT_ALGORITHMS)) {
+                if (AlgorithmGroup.LINE_SEGMENT_ALGORITHMS.equals(selectedAlgorithm.getGroup())) {
                     AlgorithmController controller = new AlgorithmController();
                     List<CustomPoint> linePoints = controller.controlGeneratingLineSegmentPoints(
                             selectedAlgorithm,
@@ -37,10 +36,9 @@ public class MousePressAndDragExitListener {
                     );
 
                     /* drawing */
+                    CanvasDrawer drawer = new CanvasDrawer(canvas);
                     for (CustomPoint point : linePoints) {
-                        canvas.getGraphicsContext2D().getPixelWriter().setColor(
-                                (int) point.getX(), (int) point.getY(), point.getColor()
-                        );
+                        drawer.drawPoint(point);
                     }
                 }
             });

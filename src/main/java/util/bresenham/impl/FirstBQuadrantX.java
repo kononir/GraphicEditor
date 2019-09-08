@@ -1,7 +1,8 @@
-package algorithm.linesegment.impl.bresenham.quadrant;
+package util.bresenham.impl;
 
 import javafx.scene.paint.Color;
-import util.CustomPoint;
+import model.CustomPoint;
+import util.bresenham.BQuadrant;
 
 public class FirstBQuadrantX implements BQuadrant {
     private int x;

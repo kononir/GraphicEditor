@@ -2,7 +2,7 @@ package algorithm;
 
 import algorithm.linesegment.LineSegmentAlgorithm;
 import algorithm.linesegment.LineSegmentAlgorithmFactory;
-import util.CustomPoint;
+import model.CustomPoint;
 
 import java.util.List;
 
