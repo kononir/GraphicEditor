@@ -2,9 +2,9 @@ package algorithm.linesegment;
 
 import algorithm.AlgorithmFactoryException;
 import algorithm.AlgorithmType;
-import algorithm.linesegment.impl.BresenhamAlgorithm;
+import algorithm.linesegment.impl.bresenham.BresenhamAlgorithm;
 import algorithm.linesegment.impl.DdaAlgorithm;
-import algorithm.linesegment.impl.WuAlgorithm;
+import algorithm.linesegment.impl.wu.WuAlgorithm;
 
 public class LineSegmentAlgorithmFactory {
     public LineSegmentAlgorithm create(AlgorithmType type) {

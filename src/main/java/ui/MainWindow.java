@@ -1,12 +1,14 @@
 package ui;
 
+import algorithm.AlgorithmType;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import algorithm.AlgorithmType;
 import listener.MousePressAndDragExitListener;
 
 public class MainWindow {
@@ -50,6 +52,11 @@ public class MainWindow {
         Canvas canvas = new Canvas();
         canvas.setHeight(500);
         canvas.setWidth(1000);
+
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.setFill(Color.WHITE);
+        gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
         MousePressAndDragExitListener.setUp(canvas, toggleGroup);
 
         AnchorPane root = new AnchorPane(menuBar, toolBar, canvas);
@@ -59,7 +66,7 @@ public class MainWindow {
         AnchorPane.setTopAnchor(toolBar, 25.0);
         AnchorPane.setLeftAnchor(toolBar, 0.0);
         AnchorPane.setRightAnchor(toolBar, 0.0);
-        AnchorPane.setTopAnchor(canvas, 67.0);
+        AnchorPane.setTopAnchor(canvas, 144.0);
         AnchorPane.setLeftAnchor(canvas, 0.0);
         AnchorPane.setRightAnchor(canvas, 0.0);
         AnchorPane.setBottomAnchor(canvas, 0.0);

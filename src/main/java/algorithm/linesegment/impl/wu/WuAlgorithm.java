@@ -1,4 +1,4 @@
-package algorithm.linesegment.impl;
+package algorithm.linesegment.impl.wu;
 
 import algorithm.linesegment.LineSegmentAlgorithm;
 import util.CustomPoint;
