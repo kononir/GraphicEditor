@@ -4,27 +4,14 @@ import javafx.scene.paint.Color;
 import model.CustomPoint;
 import algorithm.linesegment.bresenham.quadrant.BQuadrant;
 
-public class ThirdBQuadrantY implements BQuadrant {
-    private int x;
-    private int y;
-    private int z;
-    private int t;
-    private int e;
-    private int maxProjection;
-    private int minProjection;
+public class ThirdBQuadrantY extends AbstractBQuadrant {
 
     public ThirdBQuadrantY(int x, int y, int z, int t, int e, int maxProjection, int minProjection) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.t = t;
-        this.e = e;
-        this.maxProjection = maxProjection;
-        this.minProjection = minProjection;
+        super(x, y, z, t, e, maxProjection, minProjection);
     }
 
     @Override
-    public CustomPoint calculateNextPoint() {
+    public CustomPoint generateNextPoint() {
         if (e >= 0) {
             x++;
             e -= 2 * maxProjection;

@@ -2,30 +2,18 @@ package algorithm.linesegment.wu.quadrant.impl;
 
 import javafx.scene.paint.Color;
 import model.CustomPoint;
-import algorithm.linesegment.wu.quadrant.WuQuadrant;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ThirdWuQuadrantX implements WuQuadrant {
-    private int x;
-    private int y;
-    private int z;
-    private int t;
-    private double e;
-    private double tangentAngle;
+public class ThirdWuQuadrantX extends AbstractWuQuadrant {
 
     public ThirdWuQuadrantX(int x, int y, int z, int t, double e, double tangentAngle) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.t = t;
-        this.e = e;
-        this.tangentAngle = tangentAngle;
+        super(x, y, z, t, e, tangentAngle);
     }
 
     @Override
-    public List<CustomPoint> calculateNextPoints() {
+    public List<CustomPoint> generateNextPoints() {
         double secondaryY;
         if (e >= 0.5) {
             secondaryY = y;

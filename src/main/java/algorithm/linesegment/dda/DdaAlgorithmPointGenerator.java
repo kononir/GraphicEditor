@@ -2,7 +2,7 @@ package algorithm.linesegment.dda;
 
 import javafx.scene.paint.Color;
 import model.CustomPoint;
-import util.DdaAlgorithmDebugInfo;
+import util.debug.DdaAlgorithmDebugInfo;
 
 public class DdaAlgorithmPointGenerator {
     private double x;

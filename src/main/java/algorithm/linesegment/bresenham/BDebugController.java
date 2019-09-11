@@ -1,16 +1,16 @@
-package algorithm.linesegment.dda;
+package algorithm.linesegment.bresenham;
 
 import model.CustomPoint;
-import util.debug.DdaAlgorithmDebugInfo;
+import util.debug.BresenhamAlgorithmDebugInfo;
 
-public class DdaDebugController {
-    private DdaAlgorithmPointGenerator generator = new DdaAlgorithmPointGenerator();
+public class BDebugController {
+    private BresenhamAlgorithmPointGenerator generator = new BresenhamAlgorithmPointGenerator();
 
     public void controlStartingDebug(CustomPoint startingPoint, CustomPoint endingPoint) {
         generator.setUp(startingPoint, endingPoint);
     }
 
-    public DdaAlgorithmDebugInfo controlNextStep() {
+    public BresenhamAlgorithmDebugInfo controlNextStep() {
         return generator.generateNextPointDebug();
     }
 

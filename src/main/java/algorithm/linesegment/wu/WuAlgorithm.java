@@ -34,7 +34,7 @@ public class WuAlgorithm implements LineSegmentAlgorithm {
 
         WuQuadrant quadrant = new WuQuadrantFactory().create(x1, y1, z, t, tangentAngle, deltaX, deltaY);
         for (int i = 1; i <= maxProjection; i++) {
-            points.addAll(quadrant.calculateNextPoints());
+            points.addAll(quadrant.generateNextPoints());
         }
 
         return points;
