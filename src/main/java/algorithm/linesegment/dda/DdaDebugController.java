@@ -1,5 +1,6 @@
 package algorithm.linesegment.dda;
 
+import algorithm.linesegment.DebugControllerException;
 import model.CustomPoint;
 import util.debug.DdaAlgorithmDebugInfo;
 
@@ -10,11 +11,21 @@ public class DdaDebugController {
         generator.setUp(startingPoint, endingPoint);
     }
 
-    public DdaAlgorithmDebugInfo controlNextStep() {
-        return generator.generateNextPointDebug();
+    public DdaAlgorithmDebugInfo controlNextStep() throws DebugControllerException {
+        DdaAlgorithmDebugInfo info = generator.generateNextPointDebug();
+        if (info == null) {
+            throw new DebugControllerException("Reached last step!");
+        }
+
+        return info;
     }
 
-    public CustomPoint controlPrevStep() {
-        return generator.rollbackToPrevPointDebug();
+    public CustomPoint controlPrevStep() throws DebugControllerException {
+        CustomPoint point = generator.rollbackToPrevPointDebug();
+        if (point == null) {
+            throw new DebugControllerException("Reached first step!");
+        }
+
+        return point;
     }
 }

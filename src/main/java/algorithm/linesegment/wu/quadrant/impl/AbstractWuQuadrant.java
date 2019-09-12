@@ -4,6 +4,7 @@ import algorithm.linesegment.wu.quadrant.WuQuadrant;
 import model.CustomPoint;
 import util.debug.WuAlgorithmDebugInfo;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -35,7 +36,7 @@ public abstract class AbstractWuQuadrant implements WuQuadrant {
         double currE = e;
         List<CustomPoint> points = generateNextPoints();
 
-        WuAlgorithmDebugInfo info = new WuAlgorithmDebugInfo(step, points, currE, e);
+        WuAlgorithmDebugInfo info = new WuAlgorithmDebugInfo(step, points.get(0), points.get(1), currE, e);
         debugInfoQueue.add(info);
 
         return info;
@@ -44,12 +45,13 @@ public abstract class AbstractWuQuadrant implements WuQuadrant {
     @Override
     public List<CustomPoint> rollbackToPrevPointsDebug() {
         WuAlgorithmDebugInfo info = debugInfoQueue.remove();
-        List<CustomPoint> points = info.getPoints();
-        CustomPoint point = points.get(0);
-        x = (int) point.getX();
-        y = (int) point.getY();
+        CustomPoint point1 = info.getPoint1();
+        CustomPoint point2 = info.getPoint2();
+
+        x = (int) point1.getX();
+        y = (int) point1.getY();
         e = info.getError();
 
-        return points;
+        return Arrays.asList(point1, point2);
     }
 }

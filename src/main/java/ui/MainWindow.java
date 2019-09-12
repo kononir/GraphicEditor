@@ -1,8 +1,10 @@
 package ui;
 
 import algorithm.AlgorithmType;
+import algorithm.linesegment.DebugControllerException;
 import algorithm.linesegment.bresenham.BDebugController;
 import algorithm.linesegment.dda.DdaDebugController;
+import algorithm.linesegment.wu.WuDebugController;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -27,6 +29,7 @@ import ui.debug.DebugTableBuilder;
 import ui.debug.DebugTextFieldType;
 import util.debug.BresenhamAlgorithmDebugInfo;
 import util.debug.DdaAlgorithmDebugInfo;
+import util.debug.WuAlgorithmDebugInfo;
 
 import java.util.*;
 
@@ -49,6 +52,7 @@ public class MainWindow {
 
     private DdaDebugController ddaDebugController = new DdaDebugController();
     private BDebugController bDebugController = new BDebugController();
+    private WuDebugController wuDebugController = new WuDebugController();
 
     public MainWindow(Stage primaryStage) {
         MenuItem ddaMenuItem = new MenuItem(AlgorithmType.DDA.getName());
@@ -69,19 +73,19 @@ public class MainWindow {
         ddaButton.setToggleGroup(tools);
         ddaButton.setUserData(AlgorithmType.DDA);
         ddaButton.setPrefWidth(TOOL_BUTTONS_SIZE);
-        ddaButton.setOnAction(event -> showDebugAreaOrFinishDebug());
+        ddaButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
         ToggleButton bresenhamButton = new ToggleButton(AlgorithmType.BRESENHAM_ALGORITHM.getName());
         bresenhamButton.setToggleGroup(tools);
         bresenhamButton.setUserData(AlgorithmType.BRESENHAM_ALGORITHM);
         bresenhamButton.setPrefWidth(TOOL_BUTTONS_SIZE);
-        bresenhamButton.setOnAction(event -> showDebugAreaOrFinishDebug());
+        bresenhamButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
         ToggleButton wuButton = new ToggleButton(AlgorithmType.WU_ALGORITHM.getName());
         wuButton.setToggleGroup(tools);
         wuButton.setUserData(AlgorithmType.WU_ALGORITHM);
         wuButton.setPrefWidth(TOOL_BUTTONS_SIZE);
-        wuButton.setOnAction(event -> showDebugAreaOrFinishDebug());
+        wuButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
         Label lineSegmentLabel = new Label("Line segment");
 
@@ -95,13 +99,13 @@ public class MainWindow {
         ToggleButton debugButton = new ToggleButton("Debug");
         toolButtonsMap.put(ToolButtonType.DEBUG, debugButton);
         debugButton.setGraphic(new ImageView(new Image("img/debug.png")));
-        debugButton.setOnAction(event -> showDebugAreaOrShowDebugAlert());
+        debugButton.setOnAction(event -> chooseDebugActionForDebugButton());
 
         toolBar.getItems().addAll(lineSegmentVBox, new Separator(), eraserButton, new Separator(), debugButton);
 
         Canvas canvas = new Canvas();
-        canvas.setHeight(500);
-        canvas.setWidth(700);
+        canvas.setHeight(506);
+        canvas.setWidth(1000);
 
         MousePressAndDragExitListener.setUp(canvas, tools);
 
@@ -173,7 +177,8 @@ public class MainWindow {
         VBox debugActiveArea = new VBox(debugInputGridPane, firstLineDebugButtonsHBox, secondLineDebugButtonsHBox);
         debugActiveArea.setSpacing(5);
 
-        VBox debugComponentVBox = new VBox(debugTable, debugActiveArea);
+        VBox debugComponentVBox = new VBox();
+        debugComponentVBox.getChildren().addAll(debugTable, debugActiveArea);
         debugComponentVBox.setSpacing(5);
 
         AnchorPane root = new AnchorPane(menuBar, toolBar, canvas, debugComponentVBox);
@@ -185,7 +190,7 @@ public class MainWindow {
         AnchorPane.setRightAnchor(toolBar, 0.0);
         AnchorPane.setTopAnchor(canvas, 144.0);
         AnchorPane.setLeftAnchor(canvas, 0.0);
-        AnchorPane.setRightAnchor(canvas, 300.0);
+        AnchorPane.setRightAnchor(canvas, 0.0);
         AnchorPane.setBottomAnchor(canvas, 0.0);
         AnchorPane.setTopAnchor(debugComponentVBox, 144.0);
         AnchorPane.setRightAnchor(debugComponentVBox, 0.0);
@@ -195,7 +200,15 @@ public class MainWindow {
                 debugTable, debugInputGridPane, startDebugButton, finishDebugButton, prevStepButton, nextStepButton
         ));
 
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 1000, 650);
+        scene.widthProperty().addListener(((observable, oldValue, newValue) -> {
+            canvas.setWidth(scene.getWidth());
+            canvasDrawer.fillCanvas();
+        }));
+        scene.heightProperty().addListener(((observable, oldValue, newValue) -> {
+            canvas.setHeight(scene.getHeight() - 144);
+            canvasDrawer.fillCanvas();
+        }));
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -232,28 +245,36 @@ public class MainWindow {
         }
     }
 
-    private void showDebugAreaOrFinishDebug() {
+    private void chooseDebugActionForAlgorithmButton() {
         ToggleButton debugButton = (ToggleButton) toolButtonsMap.get(ToolButtonType.DEBUG);
         Optional<Toggle> selected = Optional.ofNullable(tools.getSelectedToggle());
-        if (selected.isPresent() && debugButton.isSelected()) {
-            showDebugArea(selected.get());
+        if (debugButton.isSelected()) {
+            if (selected.isPresent()) {
+                showDebugComponent(selected.get());
+            } else {
+                debugButton.setSelected(false);
+                new DebugAlert().show("Algorithm is not selected!");
+                finishDebug();
+            }
+        }
+    }
+
+    private void chooseDebugActionForDebugButton() {
+        ToggleButton debugButton = (ToggleButton) toolButtonsMap.get(ToolButtonType.DEBUG);
+        Optional<Toggle> selected = Optional.ofNullable(tools.getSelectedToggle());
+        if (debugButton.isSelected()) {
+            if (selected.isPresent()) {
+                showDebugComponent(selected.get());
+            } else {
+                debugButton.setSelected(false);
+                new DebugAlert().show("Algorithm is not selected!");
+            }
         } else {
             finishDebug();
         }
     }
 
-    private void showDebugAreaOrShowDebugAlert() {
-        ToggleButton debugButton = (ToggleButton) toolButtonsMap.get(ToolButtonType.DEBUG);
-        Optional<Toggle> selected = Optional.ofNullable(tools.getSelectedToggle());
-        if (selected.isPresent() && debugButton.isSelected()) {
-            showDebugArea(selected.get());
-        } else {
-            debugButton.setSelected(false);
-            new DebugAlert().show("Algorithm is not selected!");
-        }
-    }
-
-    private void showDebugArea(Toggle selectedToggle) {
+    private void showDebugComponent(Toggle selectedToggle) {
         AlgorithmType algorithmType = (AlgorithmType) selectedToggle.getUserData();
 
         DebugTableBuilder tableBuilder = new DebugTableBuilder();
@@ -273,6 +294,9 @@ public class MainWindow {
 
         Button startDebugButton = debugButtonsMap.get(DebugButtonType.START_DEBUG);
         hideAllFromMainStream(Arrays.asList(startDebugButton, debugInputGridPane));
+
+        canvasDrawer.fillCanvas();
+        canvasDrawer.drawGrid(10);
 
         TextField x1TextField = debugTextFieldMap.get(DebugTextFieldType.X1);
         TextField y1TextField = debugTextFieldMap.get(DebugTextFieldType.Y1);
@@ -302,6 +326,7 @@ public class MainWindow {
                 bDebugController.controlStartingDebug(startingPoint, endingPoint);
                 break;
             case WU_ALGORITHM:
+                wuDebugController.controlStartingDebug(startingPoint, endingPoint);
                 break;
         }
 
@@ -315,76 +340,75 @@ public class MainWindow {
 
         Button finishDebugButton = debugButtonsMap.get(DebugButtonType.FINISH_DEBUG);
         showAtMainStream(finishDebugButton);
-        finishDebugButton.setOnAction(event2 -> finishDebug());
+        finishDebugButton.setOnAction(event2 -> {
+            canvasDrawer.fillCanvas();
+            finishDebug();
+        });
     }
 
     private void prevStepOfDebug(AlgorithmType algorithmType) {
-        switch (algorithmType) {
-            case DDA:
-                CustomPoint currPointDda = ddaDebugController.controlPrevStep();
-                deleteLastPointAndInfo(currPointDda);
-                break;
-            case BRESENHAM_ALGORITHM:
-                CustomPoint currPointB = bDebugController.controlPrevStep();
-                deleteLastPointAndInfo(currPointB);
-                break;
-            case WU_ALGORITHM:
-                // WIP
-                break;
+        try {
+            switch (algorithmType) {
+                case DDA:
+                    CustomPoint currPointDda = ddaDebugController.controlPrevStep();
+                    deleteLastInfo();
+                    canvasDrawer.deletePoint(currPointDda);
+                    break;
+                case BRESENHAM_ALGORITHM:
+                    CustomPoint currPointB = bDebugController.controlPrevStep();
+                    deleteLastInfo();
+                    canvasDrawer.deletePoint(currPointB);
+                    break;
+                case WU_ALGORITHM:
+                    List<CustomPoint> currPointsWu = wuDebugController.controlPrevStep();
+                    deleteLastInfo();
+                    for (CustomPoint pointWu : currPointsWu) {
+                        if (pointWu != null) {
+                            canvasDrawer.deletePoint(pointWu);
+                        }
+                    }
+                    break;
+            }
+        } catch (DebugControllerException e) {
+            new DebugAlert().show(e.getMessage());
         }
     }
 
-    private void deleteLastPointAndInfo(CustomPoint currPoint) {
-        if (currPoint != null) {
-            /* deleting last row from table */
-            ObservableList debugList = debugTable.getItems();
-            int rowsNumber = debugList.size();
-            debugList.remove(rowsNumber - 1, rowsNumber);
-
-            /* deleting current point from canvas */
-            canvasDrawer.drawPoint(
-                    new CustomPoint(
-                            currPoint.getX(),
-                            currPoint.getY(),
-                            currPoint.getZ(),
-                            currPoint.getT(),
-                            Color.WHITE
-                    )
-            );
-        } else {
-            new DebugAlert().show("Reached first step!");
-        }
+    /* deleting last row from table */
+    private void deleteLastInfo() {
+        ObservableList debugList = debugTable.getItems();
+        int rowsNumber = debugList.size();
+        debugList.remove(rowsNumber - 1, rowsNumber);
     }
 
     private void nextStepOfDebug(AlgorithmType algorithmType) {
-        switch (algorithmType) {
-            case DDA:
-                DdaAlgorithmDebugInfo ddaInfo = ddaDebugController.controlNextStep();
-
-                CustomPoint ddaPoint = ddaInfo.getPoint();
-                if (ddaPoint != null) {
+        try {
+            switch (algorithmType) {
+                case DDA:
+                    DdaAlgorithmDebugInfo ddaInfo = ddaDebugController.controlNextStep();
                     debugTable.getItems().add(ddaInfo);
+                    CustomPoint ddaPoint = ddaInfo.getPoint();
                     canvasDrawer.drawPoint(ddaPoint);
-                } else {
-                    new DebugAlert().show("Reached last step!");
-                }
-
-                break;
-            case BRESENHAM_ALGORITHM:
-                BresenhamAlgorithmDebugInfo bInfo = bDebugController.controlNextStep();
-
-                CustomPoint bPoint = bInfo.getPoint();
-                if (bPoint != null) {
+                    break;
+                case BRESENHAM_ALGORITHM:
+                    BresenhamAlgorithmDebugInfo bInfo = bDebugController.controlNextStep();
                     debugTable.getItems().add(bInfo);
+                    CustomPoint bPoint = bInfo.getPoint();
                     canvasDrawer.drawPoint(bPoint);
-                } else {
-                    new DebugAlert().show("Reached last step!");
-                }
-
-                break;
-            case WU_ALGORITHM:
-                // WIP
-                break;
+                    break;
+                case WU_ALGORITHM:
+                    WuAlgorithmDebugInfo wuInfo = wuDebugController.controlNextStep();
+                    debugTable.getItems().add(wuInfo);
+                    CustomPoint wuPoint1 = wuInfo.getPoint1();
+                    canvasDrawer.drawPoint(wuPoint1);
+                    CustomPoint wuPoint2 = wuInfo.getPoint2();
+                    if (wuPoint2 != null) {
+                        canvasDrawer.drawPoint(wuPoint2);
+                    }
+                    break;
+            }
+        } catch (DebugControllerException e) {
+            new DebugAlert().show(e.getMessage());
         }
     }
 

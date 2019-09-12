@@ -2,45 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithmPointGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/ToolButtonType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/DebugControllerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuDebugController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/converter/PointIntensityToStringConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/BQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/BQuadrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/debug/DebugButtonType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/debug/DebugButtonType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/debug/DebugTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/debug/DebugTableBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/BresenhamAlgorithmDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/debug/BresenhamAlgorithmDebugInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/DdaAlgorithmDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/debug/DdaAlgorithmDebugInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/WuAlgorithmDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/debug.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/debug.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,8 +48,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="329" column="22" lean-forward="true" selection-start-line="329" selection-start-column="22" selection-end-line="329" selection-end-column="22" />
+            <state relative-caret-position="323">
+              <caret line="337" column="41" lean-forward="true" selection-start-line="337" selection-start-column="41" selection-end-line="337" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+              <folding>
+                <element signature="e#1447#1448#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/util/converter/PointIntensityToStringConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,24 +101,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/util/algorithm/bresenham/impl/FirstBQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/LineSegmentAlgorithmDebug.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithmDebug.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmDebug.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/LineSegmentAlgorithmPointGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/AlgorithmController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/ButtonType.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/DebugButtonType.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/DebugTextFieldType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/DdaAlgorithmDebugInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/listener/MousePressAndDragExitListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/BresenhamAlgorithmDebugInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/WuAlgorithmDebugInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/PointXToStringConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/BQuadrant.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/debug/BresenhamAlgorithmDebugInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java" />
@@ -128,7 +120,6 @@
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantY.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantX.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamDebugController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/debug/DebugButtonType.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/ToolButtonType.java" />
@@ -137,21 +128,30 @@
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantY.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithmPointGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantX.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantY.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantY.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantX.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantX.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/DebugControllerException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuDebugController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/debug/DebugTableBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/converter/PointIntensityToStringConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -174,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -327,10 +326,29 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="converter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -410,7 +428,8 @@
       <workItem from="1568034366883" duration="5453000" />
       <workItem from="1568069665159" duration="456000" />
       <workItem from="1568070269184" duration="7635000" />
-      <workItem from="1568111743544" duration="36914000" />
+      <workItem from="1568111743544" duration="50207000" />
+      <workItem from="1568276079687" duration="6306000" />
     </task>
     <task id="LOCAL-00001" summary="Initiate repo. Wrote application skeleton and few UI">
       <created>1567673572588</created>
@@ -447,17 +466,24 @@
       <option name="project" value="LOCAL" />
       <updated>1568152803891</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Wrote bresenham debugging">
+      <created>1568213259166</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568213259166</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129898000" />
+    <option name="totallyTimeSpent" value="149497000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28895614" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2934947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -465,8 +491,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32843137" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -499,87 +525,10 @@
     <MESSAGE value="Wrote bresenham" />
     <MESSAGE value="Wrote wu algorithm; added eraser" />
     <MESSAGE value="Wrote DDA debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote DDA debugging" />
+    <MESSAGE value="Wrote bresenham debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote bresenham debugging" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-689">
-          <caret line="2389" column="22" selection-start-line="2389" selection-start-column="22" selection-end-line="2389" selection-end-column="22" />
-          <folding>
-            <element signature="e#64639#64640#0" expanded="true" />
-            <element signature="e#64683#64684#0" expanded="true" />
-            <element signature="e#98013#98014#0" expanded="true" />
-            <element signature="e#98057#98058#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/debug/DebugTextFieldType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/ToggleButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/ToggleGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="154" column="70" selection-start-line="154" selection-start-column="70" selection-end-line="154" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/img/eraser.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantY.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -612,28 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,16 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#511#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/CustomPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -706,40 +623,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/debug/BresenhamAlgorithmDebugInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="80" column="16" lean-forward="true" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/BQuadrant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -787,20 +667,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -863,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/debug/DebugTableBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -877,24 +736,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -915,10 +756,194 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TableColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/AlgorithmFactoryException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/DebugControllerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/layout/Pane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="98" column="16" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/layout/AnchorPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="196" column="17" selection-start-line="196" selection-start-column="17" selection-end-line="196" selection-end-column="17" />
+          <folding>
+            <element signature="e#8259#8260#0" expanded="true" />
+            <element signature="e#8316#8317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/debug/DebugTableBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding>
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuDebugController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="31" column="75" lean-forward="true" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/converter/PointIntensityToStringConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="e#1447#1448#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="329" column="22" lean-forward="true" selection-start-line="329" selection-start-column="22" selection-end-line="329" selection-end-column="22" />
+        <state relative-caret-position="323">
+          <caret line="337" column="41" lean-forward="true" selection-start-line="337" selection-start-column="41" selection-end-line="337" selection-end-column="41" />
         </state>
       </provider>
     </entry>

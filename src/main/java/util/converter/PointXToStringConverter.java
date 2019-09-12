@@ -6,7 +6,14 @@ import model.CustomPoint;
 public class PointXToStringConverter extends StringConverter<CustomPoint> {
     @Override
     public String toString(CustomPoint object) {
-        return String.valueOf(object.getX());
+        String converted;
+        if (object != null) {
+            converted = String.valueOf(object.getX());
+        } else {
+            converted = "";
+        }
+
+        return converted;
     }
 
     @Override

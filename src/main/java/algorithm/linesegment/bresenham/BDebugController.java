@@ -1,5 +1,6 @@
 package algorithm.linesegment.bresenham;
 
+import algorithm.linesegment.DebugControllerException;
 import model.CustomPoint;
 import util.debug.BresenhamAlgorithmDebugInfo;
 
@@ -10,11 +11,21 @@ public class BDebugController {
         generator.setUp(startingPoint, endingPoint);
     }
 
-    public BresenhamAlgorithmDebugInfo controlNextStep() {
-        return generator.generateNextPointDebug();
+    public BresenhamAlgorithmDebugInfo controlNextStep() throws DebugControllerException {
+        BresenhamAlgorithmDebugInfo info = generator.generateNextPointDebug();
+        if (info == null) {
+            throw new DebugControllerException("Reached last step!");
+        }
+
+        return info;
     }
 
-    public CustomPoint controlPrevStep() {
-        return generator.rollbackToPrevPointDebug();
+    public CustomPoint controlPrevStep() throws DebugControllerException {
+        CustomPoint point = generator.rollbackToPrevPointDebug();
+        if (point == null) {
+            throw new DebugControllerException("Reached first step!");
+        }
+
+        return point;
     }
 }

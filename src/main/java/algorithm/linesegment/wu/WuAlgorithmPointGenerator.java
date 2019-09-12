@@ -3,7 +3,6 @@ package algorithm.linesegment.wu;
 import algorithm.linesegment.wu.quadrant.WuQuadrant;
 import algorithm.linesegment.wu.quadrant.WuQuadrantFactory;
 import javafx.scene.paint.Color;
-import javafx.util.Pair;
 import model.CustomPoint;
 import util.debug.WuAlgorithmDebugInfo;
 
@@ -67,6 +66,8 @@ public class WuAlgorithmPointGenerator {
             points = null;
         }
 
+        step++;
+
         return points;
     }
 
@@ -76,15 +77,20 @@ public class WuAlgorithmPointGenerator {
         }
 
         WuAlgorithmDebugInfo info;
-        if (step > 0) {
-            info = quadrant.generateNextPointsDebug(step);
+        if (step <= stepsNumber) {
+            if (step > 0) {
+                info = quadrant.generateNextPointsDebug(step);
+            } else {
+                info = new WuAlgorithmDebugInfo(
+                        step,
+                        new CustomPoint(x1, y1, z, t, Color.BLACK),
+                        null,
+                        0,
+                        initialE
+                );
+            }
         } else {
-            info = new WuAlgorithmDebugInfo(
-                    step,
-                    Collections.singletonList(new CustomPoint(x1, y1, z, t, Color.BLACK)),
-                    0,
-                    initialE
-            );
+            info = null;
         }
 
         step++;
@@ -98,13 +104,17 @@ public class WuAlgorithmPointGenerator {
         }
 
         List<CustomPoint> points;
-        if (step > 0) {
-            points = quadrant.rollbackToPrevPointsDebug();
-        } else {
-            points = Collections.singletonList(new CustomPoint(x1, y1, z, t, Color.BLACK));
-        }
+        if (step >= 0) {
+            if (step > 0) {
+                points = quadrant.rollbackToPrevPointsDebug();
+            } else {
+                points = Collections.singletonList(new CustomPoint(x1, y1, z, t, Color.BLACK));
+            }
 
-        step--;
+            step--;
+        } else {
+            points = null;
+        }
 
         return points;
     }

@@ -1,15 +1,15 @@
 package util.converter;
 
+import javafx.scene.paint.Color;
 import javafx.util.StringConverter;
 import model.CustomPoint;
 
-public class PointYToStringConverter extends StringConverter<CustomPoint> {
-
+public class PointIntensityToStringConverter extends StringConverter<CustomPoint> {
     @Override
     public String toString(CustomPoint object) {
         String converted;
         if (object != null) {
-            converted = String.valueOf(object.getY());
+            converted = String.valueOf(object.getColor().getBrightness());
         } else {
             converted = "";
         }
@@ -19,6 +19,6 @@ public class PointYToStringConverter extends StringConverter<CustomPoint> {
 
     @Override
     public CustomPoint fromString(String string) {
-        return new CustomPoint(0, Double.parseDouble(string), 0, 0, null);
+        return new CustomPoint(0, 0, 0, 0, Color.gray(Double.parseDouble(string)));
     }
 }
