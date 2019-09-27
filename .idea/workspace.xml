@@ -1,67 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" afterDir="false" />
+    <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="Fixed bugs (next and prev step of bresenham and wu)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/AlgorithmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/AlgorithmFactoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmFactoryException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/AlgorithmGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/AlgorithmType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/DebugControllerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/DebugControllerException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/LineSegmentAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/LineSegmentAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/LineSegmentAlgorithmFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/LineSegmentAlgorithmFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BDebugController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BresenhamAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithmPointGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BresenhamAlgorithmPointGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/BQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/BQuadrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/BQuadrantFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/BQuadrantFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/dda/DdaAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/dda/DdaDebugController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuDebugController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/WuQuadrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrantFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/WuQuadrantFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/listener/MousePressAndDragExitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndDragExitListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CustomPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/model/CustomPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/CanvasDrawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ToolButtonType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/ToolButtonType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/debug/DebugAlert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugAlert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/debug/DebugButtonType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugButtonType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/debug/DebugTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugTableBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/debug/DebugTextFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugTextFieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/converter/PointIntensityToStringConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/converter/PointIntensityToStringConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/converter/PointXToStringConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/converter/PointYToStringConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/debug/BresenhamAlgorithmDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/debug/BresenhamAlgorithmDebugInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/debug/DdaAlgorithmDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/debug/DdaAlgorithmDebugInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/debug/WuAlgorithmDebugInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/WuQuadrantFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/WuQuadrantFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,22 +33,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -119,63 +51,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/util/PointXToStringConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/BQuadrant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/debug/BresenhamAlgorithmDebugInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamDebugController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/debug/DebugButtonType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/ToolButtonType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/debug/DebugAlert.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/debug/DdaAlgorithmDebugInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/WuQuadrant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BresenhamAlgorithmPointGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/DebugControllerException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/dda/DdaDebugController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/bresenham/BDebugController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuDebugController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/debug/DebugTableBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/debug/WuAlgorithmDebugInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/converter/PointXToStringConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/converter/PointYToStringConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/converter/PointIntensityToStringConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/CanvasDrawer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Runner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/Runner.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/CanvasDrawer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BresenhamAlgorithmPointGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -183,191 +58,13 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="graphic.editor" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="graphic.editor" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1345" />
-    <option name="height" value="688" />
-  </component>
+  <component name="ProjectId" id="1RIogoAncPdjgvIoZfTG6DzYIqt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-              <item name="bresenham" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-              <item name="bresenham" type="462c0819:PsiDirectoryNode" />
-              <item name="quadrant" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-              <item name="bresenham" type="462c0819:PsiDirectoryNode" />
-              <item name="quadrant" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-              <item name="dda" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-              <item name="wu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-              <item name="wu" type="462c0819:PsiDirectoryNode" />
-              <item name="quadrant" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="linesegment" type="462c0819:PsiDirectoryNode" />
-              <item name="wu" type="462c0819:PsiDirectoryNode" />
-              <item name="quadrant" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphicEditor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphicEditor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GIIS-gudilin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -442,7 +139,20 @@
       <workItem from="1568070269184" duration="7635000" />
       <workItem from="1568111743544" duration="50207000" />
       <workItem from="1568276079687" duration="7037000" />
-      <workItem from="1568284259322" duration="4297000" />
+      <workItem from="1568284259322" duration="4547000" />
+      <workItem from="1568323118714" duration="106000" />
+      <workItem from="1568569438178" duration="1030000" />
+      <workItem from="1568834744213" duration="667000" />
+      <workItem from="1569364090112" duration="1311000" />
+      <workItem from="1569439772143" duration="446000" />
+      <workItem from="1569502970421" duration="433000" />
+      <workItem from="1569506772679" duration="806000" />
+      <workItem from="1569527969080" duration="618000" />
+      <workItem from="1569589205120" duration="11251000" />
+      <workItem from="1569608984676" duration="92000" />
+      <workItem from="1569609220250" duration="115000" />
+      <workItem from="1569609436975" duration="133000" />
+      <workItem from="1569610298521" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="Initiate repo. Wrote application skeleton and few UI">
       <created>1567673572588</created>
@@ -493,51 +203,31 @@
       <option name="project" value="LOCAL" />
       <updated>1568283480257</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed bugs (next and prev step of bresenham and wu)">
+      <created>1568297168082</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1568297168082</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154525000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2980333" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32843137" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Tool Output" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32843137" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32843137" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32843137" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="14" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" show_stripe_button="false" weight="0.24962178" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initiate repo. Wrote application skeleton and few UI" />
@@ -547,452 +237,19 @@
     <MESSAGE value="Wrote DDA debugging" />
     <MESSAGE value="Wrote bresenham debugging" />
     <MESSAGE value="Wrote wu debugging; add grid to debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote wu debugging; add grid to debug" />
+    <MESSAGE value="Fixed bugs (next and prev step of bresenham and wu)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs (next and prev step of bresenham and wu)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/SecondBQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="102" selection-start-line="8" selection-start-column="102" selection-end-line="8" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/ThirdBQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugButtonType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/debug/DdaAlgorithmDebugInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugAlert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/FourthBQuadrantX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/WuQuadrantFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/debug/BresenhamAlgorithmDebugInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndDragExitListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="31" column="79" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/BQuadrant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FourthWuQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/SecondWuQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/ThirdWuQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/ToolButtonType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/FirstBQuadrantX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BresenhamAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/TableColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmFactoryException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/DebugControllerException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="23" />
-          <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/dda/DdaDebugController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BDebugController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/layout/Pane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="98" column="16" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/layout/AnchorPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="196" column="17" selection-start-line="196" selection-start-column="17" selection-end-line="196" selection-end-column="17" />
-          <folding>
-            <element signature="e#8259#8260#0" expanded="true" />
-            <element signature="e#8316#8317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugTableBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/WuQuadrant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/debug/WuAlgorithmDebugInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding>
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuDebugController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/converter/PointXToStringConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/converter/PointYToStringConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/FirstWuQuadrantY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="31" column="75" lean-forward="true" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/converter/PointIntensityToStringConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/model/CustomPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/BQuadrantFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/CanvasDrawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="22" column="104" selection-start-line="22" selection-start-column="104" selection-end-line="22" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/quadrant/impl/AbstractWuQuadrant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BresenhamAlgorithmPointGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-473">
-          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/quadrant/impl/AbstractBQuadrant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" column="31" lean-forward="true" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuAlgorithmPointGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/dda/DdaAlgorithmPointGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

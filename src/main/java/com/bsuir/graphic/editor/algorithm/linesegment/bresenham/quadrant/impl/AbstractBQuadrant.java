@@ -4,8 +4,8 @@ import com.bsuir.graphic.editor.algorithm.linesegment.bresenham.quadrant.BQuadra
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.util.debug.BresenhamAlgorithmDebugInfo;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public abstract class AbstractBQuadrant implements BQuadrant {
     protected int x;
@@ -16,7 +16,7 @@ public abstract class AbstractBQuadrant implements BQuadrant {
     protected int maxProjection;
     protected int minProjection;
 
-    private List<BresenhamAlgorithmDebugInfo> debugInfoList = new LinkedList<>();
+    private Deque<BresenhamAlgorithmDebugInfo> debugInfoDeque = new ArrayDeque<>();
 
     public AbstractBQuadrant(int x, int y, int z, int t, int e, int maxProjection, int minProjection) {
         this.x = x;
@@ -37,13 +37,13 @@ public abstract class AbstractBQuadrant implements BQuadrant {
         CustomPoint point = generateNextPoint();
 
         BresenhamAlgorithmDebugInfo info = new BresenhamAlgorithmDebugInfo(step, point, currE, e);
-        debugInfoList.add(info);
+        debugInfoDeque.add(info);
         return info;
     }
 
     @Override
     public CustomPoint rollbackToPrevPointDebug() {
-        BresenhamAlgorithmDebugInfo info = debugInfoList.remove(debugInfoList.size() - 1);
+        BresenhamAlgorithmDebugInfo info = debugInfoDeque.removeLast();
         CustomPoint point = info.getPoint();
         x = (int) point.getX();
         y = (int) point.getY();

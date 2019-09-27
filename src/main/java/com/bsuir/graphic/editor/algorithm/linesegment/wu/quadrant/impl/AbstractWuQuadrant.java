@@ -4,9 +4,7 @@ import com.bsuir.graphic.editor.algorithm.linesegment.wu.quadrant.WuQuadrant;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.util.debug.WuAlgorithmDebugInfo;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public abstract class AbstractWuQuadrant implements WuQuadrant {
     protected int x;
@@ -16,7 +14,7 @@ public abstract class AbstractWuQuadrant implements WuQuadrant {
     protected double e;
     protected double tangentAngle;
 
-    private List<WuAlgorithmDebugInfo> debugInfoList = new LinkedList<>();
+    private Deque<WuAlgorithmDebugInfo> debugInfoDeque = new ArrayDeque<>();
 
     public AbstractWuQuadrant(int x, int y, int z, int t, double e, double tangentAngle) {
         this.x = x;
@@ -36,14 +34,14 @@ public abstract class AbstractWuQuadrant implements WuQuadrant {
         List<CustomPoint> points = generateNextPoints();
 
         WuAlgorithmDebugInfo info = new WuAlgorithmDebugInfo(step, points.get(0), points.get(1), currE, e);
-        debugInfoList.add(info);
+        debugInfoDeque.add(info);
 
         return info;
     }
 
     @Override
     public List<CustomPoint> rollbackToPrevPointsDebug() {
-        WuAlgorithmDebugInfo info = debugInfoList.remove(debugInfoList.size() - 1);
+        WuAlgorithmDebugInfo info = debugInfoDeque.removeLast();
         CustomPoint point1 = info.getPoint1();
         CustomPoint point2 = info.getPoint2();
 

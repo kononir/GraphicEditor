@@ -15,7 +15,7 @@ public class WuAlgorithmPointGenerator {
     private int z;
     private int t;
 
-    private double initialE;
+    private double tangentAngle;
 
     private WuQuadrant quadrant;
 
@@ -40,12 +40,12 @@ public class WuAlgorithmPointGenerator {
         double maxProjection = Math.max(projectionX, projectionY);
         double minProjection = Math.min(projectionX, projectionY);
 
-        initialE = minProjection / maxProjection;
+        tangentAngle = minProjection / maxProjection;
 
         step = 0;
         stepsNumber = (int) maxProjection;
 
-        quadrant = new WuQuadrantFactory().create(x1, y1, z, t, initialE, deltaX, deltaY);
+        quadrant = new WuQuadrantFactory().create(x1, y1, z, t, tangentAngle, deltaX, deltaY);
 
         isSetUp = true;
     }
@@ -86,7 +86,7 @@ public class WuAlgorithmPointGenerator {
                         new CustomPoint(x1, y1, z, t, Color.BLACK),
                         null,
                         0,
-                        initialE
+                        tangentAngle
                 );
             }
 

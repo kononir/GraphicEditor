@@ -11,32 +11,32 @@ public class WuQuadrantFactory {
         boolean positiveY = (deltaY >= 0);
         boolean xIsMainCoordinate = (projectionX > projectionY);
 
-        double initialE = tangentAngle;
+        double initialE = tangentAngle - 0.5;
 
         WuQuadrant wuQuadrant;
         if (positiveX && positiveY) {
             if (xIsMainCoordinate) {
-                wuQuadrant = new FirstWuQuadrantX(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new FirstWuQuadrantX(x, y + 1, z, t, initialE, tangentAngle);
             } else {
-                wuQuadrant = new FirstWuQuadrantY(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new FirstWuQuadrantY(x + 1, y, z, t, initialE, tangentAngle);
             }
         } else if (!positiveX && positiveY) {
             if (xIsMainCoordinate) {
-                wuQuadrant = new SecondWuQuadrantX(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new SecondWuQuadrantX(x, y + 1, z, t, initialE, tangentAngle);
             } else {
-                wuQuadrant = new SecondWuQuadrantY(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new SecondWuQuadrantY(x - 1, y, z, t, initialE, tangentAngle);
             }
         } else if (positiveX) {
             if (xIsMainCoordinate) {
-                wuQuadrant = new ThirdWuQuadrantX(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new ThirdWuQuadrantX(x, y - 1, z, t, initialE, tangentAngle);
             } else {
-                wuQuadrant = new ThirdWuQuadrantY(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new ThirdWuQuadrantY(x + 1, y, z, t, initialE, tangentAngle);
             }
         } else {
             if (xIsMainCoordinate) {
-                wuQuadrant = new FourthWuQuadrantX(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new FourthWuQuadrantX(x, y - 1, z, t, initialE, tangentAngle);
             } else {
-                wuQuadrant = new FourthWuQuadrantY(x, y, z, t, initialE, tangentAngle);
+                wuQuadrant = new FourthWuQuadrantY(x - 1, y, z, t, initialE, tangentAngle);
             }
         }
 

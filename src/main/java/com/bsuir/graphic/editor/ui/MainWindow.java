@@ -45,10 +45,10 @@ public class MainWindow {
 
     private TableView debugTable = new TableView();
     private GridPane debugInputGridPane = new GridPane();
-    private Map<DebugButtonType, Button> debugButtonsMap = new HashMap<>();
-    private Map<DebugTextFieldType, TextField> debugTextFieldMap = new HashMap<>();
+    private Map<DebugButtonType, Button> debugButtonsMap = new EnumMap<>(DebugButtonType.class);
+    private Map<DebugTextFieldType, TextField> debugTextFieldMap = new EnumMap<>(DebugTextFieldType.class);
 
-    private Map<ToolButtonType, ButtonBase> toolButtonsMap = new HashMap<>();
+    private Map<ToolButtonType, ButtonBase> toolButtonsMap = new EnumMap<>(ToolButtonType.class);
 
     private DdaDebugController ddaDebugController = new DdaDebugController();
     private BDebugController bDebugController = new BDebugController();
