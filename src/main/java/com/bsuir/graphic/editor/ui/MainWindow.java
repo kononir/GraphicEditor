@@ -101,6 +101,17 @@ public class MainWindow {
         VBox lineSegmentVBox = new VBox(ddaButton, bresenhamButton, wuButton, lineSegmentLabel);
         lineSegmentVBox.setSpacing(5);
 
+        ToggleButton circleButton = new ToggleButton(AlgorithmType.CIRCLE_GENERATION_ALGORITHM.getName());
+        circleButton.setToggleGroup(tools);
+        circleButton.setUserData(AlgorithmType.CIRCLE_GENERATION_ALGORITHM);
+        circleButton.setPrefWidth(TOOL_BUTTONS_SIZE);
+        circleButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
+
+        Label secondOrderLinesLabel = new Label("Second order lines");
+
+        VBox secondOrderLinesVBox = new VBox(circleButton, secondOrderLinesLabel);
+        secondOrderLinesVBox.setSpacing(5);
+
         Button eraserButton = new Button("Eraser");
         eraserButton.setGraphic(new ImageView(new Image("img/eraser.png")));
         eraserButton.setOnAction(event -> canvasDrawer.fillCanvas());
@@ -110,7 +121,15 @@ public class MainWindow {
         debugButton.setGraphic(new ImageView(new Image("img/debug.png")));
         debugButton.setOnAction(event -> chooseDebugActionForDebugButton());
 
-        toolBar.getItems().addAll(lineSegmentVBox, new Separator(), eraserButton, new Separator(), debugButton);
+        toolBar.getItems().addAll(
+                lineSegmentVBox,
+                new Separator(),
+                secondOrderLinesVBox,
+                new Separator(),
+                eraserButton,
+                new Separator(),
+                debugButton
+        );
 
         Canvas canvas = new Canvas();
         canvas.setHeight(506);
