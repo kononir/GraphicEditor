@@ -21,7 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import com.bsuir.graphic.editor.listener.MousePressAndDragExitListener;
+import com.bsuir.graphic.editor.listener.MousePressAndReleaseListener;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.ui.debug.DebugAlert;
 import com.bsuir.graphic.editor.ui.debug.DebugButtonType;
@@ -135,7 +135,7 @@ public class MainWindow {
         canvas.setHeight(506);
         canvas.setWidth(1000);
 
-        MousePressAndDragExitListener.setUp(canvas, tools);
+        MousePressAndReleaseListener.setUp(canvas, tools);
 
         canvasDrawer = new CanvasDrawer(canvas);
         canvasDrawer.fillCanvas();

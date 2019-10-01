@@ -5,8 +5,8 @@ public enum AlgorithmType {
     BRESENHAM_ALGORITHM("Bresenham algorithm", AlgorithmGroup.LINE_SEGMENT_ALGORITHMS),
     WU_ALGORITHM("Wu algorithm", AlgorithmGroup.LINE_SEGMENT_ALGORITHMS),
 
-    CIRCLE_GENERATION_ALGORITHM("Circle algorithm", AlgorithmGroup.SECOND_ORDER_LINES_ALGORITHMS),
-    ELLIPSE_GENERATION_ALGORITHM("Ellipse algorithm", AlgorithmGroup.SECOND_ORDER_LINES_ALGORITHMS);
+    CIRCLE_GENERATION_ALGORITHM("Circle algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS),
+    ELLIPSE_GENERATION_ALGORITHM("Ellipse algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS);
 
     private String name;
     private AlgorithmGroup group;

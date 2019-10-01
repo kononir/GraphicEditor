@@ -13,7 +13,7 @@ import com.bsuir.graphic.editor.ui.CanvasDrawer;
 import java.util.List;
 import java.util.Optional;
 
-public class MousePressAndDragExitListener {
+public class MousePressAndReleaseListener {
     private static double startingMouseX;
     private static double startingMouseY;
 
