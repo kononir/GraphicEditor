@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification> {
-    private static final int LIMIT = 0;
-
     @Override
     public List<CustomPoint> generate(CircleSpecification specification) {
         List<CustomPoint> firstOctantPoints = generateFirstOctant(
@@ -23,14 +21,15 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
         List<CustomPoint> points = new ArrayList<>();
 
         // begin - x and y start coordinate of first octant
-        int begin = (int) (radius / Math.sqrt(2));
-        int x = (int) centerPoint.getX() + begin;
-        int y = (int) centerPoint.getY() + begin;
+        int begin = (int) Math.ceil(radius / Math.sqrt(2));
+        int x = begin;
+        int y = begin;
         int e = 2 - 2 * radius;
 
-        points.add(new CustomPoint(x, y, 0, 0, Color.BLACK));
+        points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.BLACK));
 
-        while (y > LIMIT) {
+        int limit = 0;
+        while (y > limit) {
             if (e > 0) {
                 int delta = 2 * e - 2 * x - 1;
                 if (delta > 0) {
@@ -57,7 +56,7 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
                 e = e + 2 * x - 2 * y + 2;
             }
 
-            points.add(new CustomPoint(x, y, 0, 0, Color.BLACK));
+            points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.BLACK));
         }
 
         return points;

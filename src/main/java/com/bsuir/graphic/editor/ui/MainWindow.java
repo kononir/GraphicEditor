@@ -107,9 +107,15 @@ public class MainWindow {
         circleButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         circleButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
+        ToggleButton ellipseButton = new ToggleButton(AlgorithmType.ELLIPSE_GENERATION_ALGORITHM.getName());
+        ellipseButton.setToggleGroup(tools);
+        ellipseButton.setUserData(AlgorithmType.ELLIPSE_GENERATION_ALGORITHM);
+        ellipseButton.setPrefWidth(TOOL_BUTTONS_SIZE);
+        ellipseButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
+
         Label secondOrderLinesLabel = new Label("Second order lines");
 
-        VBox secondOrderLinesVBox = new VBox(circleButton, secondOrderLinesLabel);
+        VBox secondOrderLinesVBox = new VBox(circleButton, ellipseButton, secondOrderLinesLabel);
         secondOrderLinesVBox.setSpacing(5);
 
         Button eraserButton = new Button("Eraser");

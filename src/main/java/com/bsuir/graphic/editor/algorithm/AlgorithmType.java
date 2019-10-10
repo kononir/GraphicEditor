@@ -6,7 +6,8 @@ public enum AlgorithmType {
     WU_ALGORITHM("Wu algorithm", AlgorithmGroup.LINE_SEGMENT_ALGORITHMS),
 
     CIRCLE_GENERATION_ALGORITHM("Circle algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS),
-    ELLIPSE_GENERATION_ALGORITHM("Ellipse algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS);
+    ELLIPSE_GENERATION_ALGORITHM("Ellipse algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS),
+    FIGURE_GENERATION_ALGORITHM("Figure algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS);
 
     private String name;
     private AlgorithmGroup group;

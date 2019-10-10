@@ -30,10 +30,9 @@ public class AlgorithmController {
     }
 
     public List<CustomPoint> controlGeneratingEllipsePoints(CustomPoint centerPoint,
-                                                            CustomPoint aPoint,
-                                                            CustomPoint bPoint) {
-        int a = calculateDistanceBetweenPoints(centerPoint, aPoint);
-        int b = calculateDistanceBetweenPoints(centerPoint, bPoint);
+                                                            CustomPoint radiusPoint) {
+        int a = calculateDeltaX(centerPoint, radiusPoint);
+        int b = calculateDeltaY(centerPoint, radiusPoint);
         EllipseSpecification specification = new EllipseSpecification(centerPoint, a, b);
 
         FigureGenerator<EllipseSpecification> generator = new EllipseGenerator();
@@ -41,8 +40,16 @@ public class AlgorithmController {
     }
 
     private int calculateDistanceBetweenPoints(CustomPoint point1, CustomPoint point2) {
-        double deltaX = Math.abs(point2.getX() - point1.getX());
-        double deltaY = Math.abs(point2.getY() - point1.getY());
+        int deltaX = calculateDeltaX(point1, point2);
+        int deltaY = calculateDeltaY(point1, point2);
         return (int) Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    }
+
+    private int calculateDeltaX(CustomPoint point1, CustomPoint point2) {
+        return (int) Math.abs(point2.getX() - point1.getX());
+    }
+
+    private int calculateDeltaY(CustomPoint point1, CustomPoint point2) {
+        return (int) Math.abs(point2.getY() - point1.getY());
     }
 }

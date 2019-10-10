@@ -18,6 +18,10 @@ public class CustomPoint {
         this.color = color;
     }
 
+    public static CustomPoint simplePoint(double x, double y, Color color) {
+        return new CustomPoint(x, y, 0, 0, color);
+    }
+
     public double getX() {
         return x;
     }

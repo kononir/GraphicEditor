@@ -5,6 +5,8 @@ import com.bsuir.graphic.editor.model.CustomPoint;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
@@ -30,6 +32,8 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
         int y = (int) firstOctantPoint.getY();
         secondOctantPoints.add(new CustomPoint(x - shiftSize, y + shiftSize, 0, 0, Color.BLACK));
 
+        Collections.reverse(secondOctantPoints);
+
         List<CustomPoint> firstQuadrantPoints = new ArrayList<>();
         firstQuadrantPoints.addAll(secondOctantPoints);
         firstQuadrantPoints.addAll(firstOctantPoints);
@@ -51,13 +55,15 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
             CustomPoint nextFirstQuadrantPoint = firstQuadrantPoints.get(pointIndex + 1);
             int nextX = (int) nextFirstQuadrantPoint.getX();
             int nextY= (int) nextFirstQuadrantPoint.getY();
-            shiftSize += Math.abs(nextX - x);
+            shiftSize += 2 * Math.abs(nextX - x);
         }
 
         CustomPoint firstQuadrantPoint = firstQuadrantPoints.get(lastPointIndex);
         int x = (int) firstQuadrantPoint.getX();
         int y = (int) firstQuadrantPoint.getY();
         secondQuadrantPoints.add(new CustomPoint(x - shiftSize, y, 0, 0, Color.BLACK));
+
+        Collections.reverse(secondQuadrantPoints);
 
         List<CustomPoint> upperFigurePartPoints = new ArrayList<>();
         upperFigurePartPoints.addAll(secondQuadrantPoints);
@@ -80,7 +86,7 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
             CustomPoint nextUpperSemicirclePoint = upperFigurePartPoints.get(pointIndex + 1);
             int nextX = (int) nextUpperSemicirclePoint.getX();
             int nextY= (int) nextUpperSemicirclePoint.getY();
-            shiftSize += nextY - y;
+            shiftSize += 2 * (nextY - y);
         }
 
         CustomPoint upperSemicirclePoint = upperFigurePartPoints.get(lastPointIndex);
@@ -88,10 +94,17 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
         int y = (int) upperSemicirclePoint.getY();
         lowerSemicirclePoints.add(new CustomPoint(x, y - shiftSize, 0, 0, Color.BLACK));
 
+        Collections.reverse(lowerSemicirclePoints);
+
         List<CustomPoint> figurePoints = new ArrayList<>();
         figurePoints.addAll(upperFigurePartPoints);
         figurePoints.addAll(lowerSemicirclePoints);
 
         return figurePoints;
+    }
+
+    @Override
+    public Iterator<CustomPoint> generateDebug(T specification) {
+        return generate(specification).iterator();
     }
 }

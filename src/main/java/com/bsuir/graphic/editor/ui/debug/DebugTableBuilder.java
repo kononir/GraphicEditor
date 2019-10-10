@@ -1,14 +1,6 @@
 package com.bsuir.graphic.editor.ui.debug;
 
 import com.bsuir.graphic.editor.algorithm.AlgorithmType;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.converter.DoubleStringConverter;
-import javafx.util.converter.IntegerStringConverter;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.util.converter.PointIntensityToStringConverter;
 import com.bsuir.graphic.editor.util.converter.PointXToStringConverter;
@@ -16,6 +8,12 @@ import com.bsuir.graphic.editor.util.converter.PointYToStringConverter;
 import com.bsuir.graphic.editor.util.debug.BresenhamAlgorithmDebugInfo;
 import com.bsuir.graphic.editor.util.debug.DdaAlgorithmDebugInfo;
 import com.bsuir.graphic.editor.util.debug.WuAlgorithmDebugInfo;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +31,9 @@ public class DebugTableBuilder {
             case WU_ALGORITHM:
                 newColumns = buildWuColumns();
                 break;
+            case CIRCLE_GENERATION_ALGORITHM:
+            case ELLIPSE_GENERATION_ALGORITHM:
+                throw new UnsupportedOperationException();
             default:
                 throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
         }
@@ -53,7 +54,6 @@ public class DebugTableBuilder {
         xCol.setCellValueFactory(new PropertyValueFactory<>("point"));
         yCol.setCellValueFactory(new PropertyValueFactory<>("point"));
 
-        iCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         xCol.setCellFactory(TextFieldTableCell.forTableColumn(new PointXToStringConverter()));
         yCol.setCellFactory(TextFieldTableCell.forTableColumn(new PointYToStringConverter()));
 
@@ -73,11 +73,8 @@ public class DebugTableBuilder {
         yCol.setCellValueFactory(new PropertyValueFactory<>("point"));
         adjustedECol.setCellValueFactory(new PropertyValueFactory<>("adjustedError"));
 
-        iCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        eCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         xCol.setCellFactory(TextFieldTableCell.forTableColumn(new PointXToStringConverter()));
         yCol.setCellFactory(TextFieldTableCell.forTableColumn(new PointYToStringConverter()));
-        adjustedECol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
         return Arrays.asList(iCol, eCol, xCol, yCol, adjustedECol);
     }
@@ -110,10 +107,6 @@ public class DebugTableBuilder {
         x2Col.setCellValueFactory(new PropertyValueFactory<>("point2"));
         y2Col.setCellValueFactory(new PropertyValueFactory<>("point2"));
         e2Col.setCellValueFactory(new PropertyValueFactory<>("point2"));
-
-        iCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        eCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
-        adjustedECol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
 
         x1Col.setCellFactory(TextFieldTableCell.forTableColumn(new PointXToStringConverter()));
         y1Col.setCellFactory(TextFieldTableCell.forTableColumn(new PointYToStringConverter()));

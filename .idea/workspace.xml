@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/AbstractFigureGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/EllipseGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/FigureGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/CircleSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/EllipseSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/CircleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/CircleGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/FigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/FigureGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/AbstractFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/AbstractFigureGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/CircleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/CircleGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/EllipseGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/EllipseGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MouseClickListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndReleaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndReleaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/model/CustomPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/model/CustomPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugTableBuilder.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +43,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -158,7 +163,12 @@
       <workItem from="1569835370117" duration="16000" />
       <workItem from="1569840275677" duration="3008000" />
       <workItem from="1569846207663" duration="5254000" />
-      <workItem from="1569950880948" duration="5391000" />
+      <workItem from="1569950880948" duration="10477000" />
+      <workItem from="1570102399705" duration="39000" />
+      <workItem from="1570108050009" duration="1285000" />
+      <workItem from="1570137399064" duration="480000" />
+      <workItem from="1570182198645" duration="140000" />
+      <workItem from="1570696584110" duration="14881000" />
     </task>
     <task id="LOCAL-00001" summary="Initiate repo. Wrote application skeleton and few UI">
       <created>1567673572588</created>
@@ -230,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569873485604</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Wrote ellipse generator + start mouse click listener">
+      <created>1569962209162</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1569962209162</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +277,8 @@
     <MESSAGE value="Fixed bugs (next and prev step of bresenham and wu)" />
     <MESSAGE value="Solved problems with wu algorithm" />
     <MESSAGE value="Wrote circle generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote circle generator" />
+    <MESSAGE value="Wrote ellipse generator + start mouse click listener" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote ellipse generator + start mouse click listener" />
   </component>
   <component name="masterDetails">
     <states>
