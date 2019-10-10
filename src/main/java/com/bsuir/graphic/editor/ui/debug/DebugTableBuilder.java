@@ -16,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class DebugTableBuilder {
@@ -33,7 +34,8 @@ public class DebugTableBuilder {
                 break;
             case CIRCLE_GENERATION_ALGORITHM:
             case ELLIPSE_GENERATION_ALGORITHM:
-                throw new UnsupportedOperationException();
+                newColumns = Collections.emptyList();
+                break;
             default:
                 throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
         }

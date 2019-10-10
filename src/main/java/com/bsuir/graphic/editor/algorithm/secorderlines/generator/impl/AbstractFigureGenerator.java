@@ -4,10 +4,7 @@ import com.bsuir.graphic.editor.algorithm.secorderlines.generator.FigureGenerato
 import com.bsuir.graphic.editor.model.CustomPoint;
 import javafx.scene.paint.Color;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
     protected List<CustomPoint> reflectFirstOctantXY(List<CustomPoint> firstOctantPoints) {
@@ -104,7 +101,7 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
     }
 
     @Override
-    public Iterator<CustomPoint> generateDebug(T specification) {
-        return generate(specification).iterator();
+    public ListIterator<CustomPoint> generateDebug(T specification) {
+        return new LinkedList<>(generate(specification)).listIterator();
     }
 }

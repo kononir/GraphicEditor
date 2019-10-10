@@ -1,10 +1,12 @@
 package com.bsuir.graphic.editor.ui;
 
 import com.bsuir.graphic.editor.algorithm.AlgorithmType;
-import com.bsuir.graphic.editor.algorithm.linesegment.DebugControllerException;
+import com.bsuir.graphic.editor.algorithm.DebugControllerException;
 import com.bsuir.graphic.editor.algorithm.linesegment.bresenham.BDebugController;
 import com.bsuir.graphic.editor.algorithm.linesegment.dda.DdaDebugController;
 import com.bsuir.graphic.editor.algorithm.linesegment.wu.WuDebugController;
+import com.bsuir.graphic.editor.algorithm.secorderlines.FigureDebugController;
+import com.bsuir.graphic.editor.util.point.CanvasDrawer;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -53,6 +55,8 @@ public class MainWindow {
     private DdaDebugController ddaDebugController = new DdaDebugController();
     private BDebugController bDebugController = new BDebugController();
     private WuDebugController wuDebugController = new WuDebugController();
+
+    private FigureDebugController figureDebugController = new FigureDebugController();
 
     public MainWindow(Stage primaryStage) {
         MenuItem ddaMenuItem = new MenuItem(AlgorithmType.DDA.getName());
@@ -330,7 +334,7 @@ public class MainWindow {
         hideAllFromMainStream(Arrays.asList(startDebugButton, debugInputGridPane));
 
         canvasDrawer.fillCanvas();
-        canvasDrawer.drawGrid(10);
+        canvasDrawer.drawGrid(CanvasDrawer.BIG_POINT_SIZE);
 
         TextField x1TextField = debugTextFieldMap.get(DebugTextFieldType.X1);
         TextField y1TextField = debugTextFieldMap.get(DebugTextFieldType.Y1);
@@ -362,6 +366,11 @@ public class MainWindow {
             case WU_ALGORITHM:
                 wuDebugController.controlStartingDebug(startingPoint, endingPoint);
                 break;
+            case CIRCLE_GENERATION_ALGORITHM:
+                figureDebugController.controlStartingDebug(Arrays.asList(startingPoint, endingPoint), algorithmType);
+                break;
+            default:
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
         }
 
         Button prevStepButton = debugButtonsMap.get(DebugButtonType.PREV_STEP);
@@ -386,22 +395,28 @@ public class MainWindow {
                 case DDA:
                     CustomPoint currPointDda = ddaDebugController.controlPrevStep();
                     deleteLastInfo();
-                    canvasDrawer.deletePoint(currPointDda);
+                    canvasDrawer.deleteBigPoint(currPointDda);
                     break;
                 case BRESENHAM_ALGORITHM:
                     CustomPoint currPointB = bDebugController.controlPrevStep();
                     deleteLastInfo();
-                    canvasDrawer.deletePoint(currPointB);
+                    canvasDrawer.deleteBigPoint(currPointB);
                     break;
                 case WU_ALGORITHM:
                     List<CustomPoint> currPointsWu = wuDebugController.controlPrevStep();
                     deleteLastInfo();
                     for (CustomPoint pointWu : currPointsWu) {
                         if (pointWu != null) {
-                            canvasDrawer.deletePoint(pointWu);
+                            canvasDrawer.deleteBigPoint(pointWu);
                         }
                     }
                     break;
+                case CIRCLE_GENERATION_ALGORITHM:
+                    CustomPoint currPointCircle = figureDebugController.controlPrevStep();
+                    canvasDrawer.deleteBigPoint(currPointCircle);
+                    break;
+                default:
+                    throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
             }
         } catch (DebugControllerException e) {
             new DebugAlert().show(e.getMessage());
@@ -424,24 +439,30 @@ public class MainWindow {
                     DdaAlgorithmDebugInfo ddaInfo = ddaDebugController.controlNextStep();
                     debugTable.getItems().add(ddaInfo);
                     CustomPoint ddaPoint = ddaInfo.getPoint();
-                    canvasDrawer.drawPoint(ddaPoint);
+                    canvasDrawer.drawBigPoint(ddaPoint);
                     break;
                 case BRESENHAM_ALGORITHM:
                     BresenhamAlgorithmDebugInfo bInfo = bDebugController.controlNextStep();
                     debugTable.getItems().add(bInfo);
                     CustomPoint bPoint = bInfo.getPoint();
-                    canvasDrawer.drawPoint(bPoint);
+                    canvasDrawer.drawBigPoint(bPoint);
                     break;
                 case WU_ALGORITHM:
                     WuAlgorithmDebugInfo wuInfo = wuDebugController.controlNextStep();
                     debugTable.getItems().add(wuInfo);
                     CustomPoint wuPoint1 = wuInfo.getPoint1();
-                    canvasDrawer.drawPoint(wuPoint1);
+                    canvasDrawer.drawBigPoint(wuPoint1);
                     CustomPoint wuPoint2 = wuInfo.getPoint2();
                     if (wuPoint2 != null) {
-                        canvasDrawer.drawPoint(wuPoint2);
+                        canvasDrawer.drawBigPoint(wuPoint2);
                     }
                     break;
+                case CIRCLE_GENERATION_ALGORITHM:
+                    CustomPoint circlePoint = figureDebugController.controlNextStep();
+                    canvasDrawer.drawBigPoint(circlePoint);
+                    break;
+                default:
+                    throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
             }
         } catch (DebugControllerException e) {
             new DebugAlert().show(e.getMessage());

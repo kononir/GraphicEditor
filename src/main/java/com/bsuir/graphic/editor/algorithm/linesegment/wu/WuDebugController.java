@@ -1,6 +1,6 @@
 package com.bsuir.graphic.editor.algorithm.linesegment.wu;
 
-import com.bsuir.graphic.editor.algorithm.linesegment.DebugControllerException;
+import com.bsuir.graphic.editor.algorithm.DebugControllerException;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.util.debug.WuAlgorithmDebugInfo;
 

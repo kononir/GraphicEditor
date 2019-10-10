@@ -8,7 +8,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import com.bsuir.graphic.editor.model.CustomPoint;
-import com.bsuir.graphic.editor.ui.CanvasDrawer;
+import com.bsuir.graphic.editor.util.point.CanvasDrawer;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.bsuir.graphic.editor.algorithm.linesegment;
+package com.bsuir.graphic.editor.algorithm;
 
 public class DebugControllerException extends Exception {
     public DebugControllerException(String message) {

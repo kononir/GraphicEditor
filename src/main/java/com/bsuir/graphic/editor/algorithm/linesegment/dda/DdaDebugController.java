@@ -1,6 +1,6 @@
 package com.bsuir.graphic.editor.algorithm.linesegment.dda;
 
-import com.bsuir.graphic.editor.algorithm.linesegment.DebugControllerException;
+import com.bsuir.graphic.editor.algorithm.DebugControllerException;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.util.debug.DdaAlgorithmDebugInfo;
 
@@ -13,7 +13,7 @@ public class DdaDebugController {
 
     public DdaAlgorithmDebugInfo controlNextStep() throws DebugControllerException {
         DdaAlgorithmDebugInfo info = generator.generateNextPointDebug();
-        if (info == null) {
+        if (info.getPoint() == null) {
             throw new DebugControllerException("Reached last step!");
         }
 

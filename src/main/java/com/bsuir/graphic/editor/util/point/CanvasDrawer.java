@@ -1,4 +1,4 @@
-package com.bsuir.graphic.editor.ui;
+package com.bsuir.graphic.editor.util.point;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -7,6 +7,8 @@ import javafx.scene.paint.Color;
 import com.bsuir.graphic.editor.model.CustomPoint;
 
 public class CanvasDrawer {
+    public static final int BIG_POINT_SIZE = 10;
+
     private Canvas canvas;
 
     public CanvasDrawer(Canvas canvas) {
@@ -19,8 +21,21 @@ public class CanvasDrawer {
         );
     }
 
+    public void drawBigPoint(CustomPoint point) {
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.setFill(point.getColor());
+
+        double firstX = (int) point.getX() * BIG_POINT_SIZE;
+        double firstY = (int) point.getY() * BIG_POINT_SIZE;
+        gc.fillRect(firstX, firstY, BIG_POINT_SIZE, BIG_POINT_SIZE);
+    }
+
     public void deletePoint(CustomPoint point) {
         drawPoint(new CustomPoint(point.getX(), point.getY(), point.getZ(), point.getT(), Color.WHITE));
+    }
+
+    public void deleteBigPoint(CustomPoint point) {
+        drawBigPoint(new CustomPoint(point.getX(), point.getY(), point.getZ(), point.getT(), Color.WHITE));
     }
 
     public void fillCanvas() {

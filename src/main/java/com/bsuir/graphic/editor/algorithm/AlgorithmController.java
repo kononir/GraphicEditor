@@ -8,10 +8,13 @@ import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.EllipseGe
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.CircleSpecification;
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.EllipseSpecification;
 import com.bsuir.graphic.editor.model.CustomPoint;
+import com.bsuir.graphic.editor.util.point.PointsCalculator;
 
 import java.util.List;
 
 public class AlgorithmController {
+    private PointsCalculator calculator = new PointsCalculator();
+
     public List<CustomPoint> controlGeneratingLineSegmentPoints(
             AlgorithmType algorithmType, CustomPoint startingPoint, CustomPoint endingPoint) {
         LineSegmentAlgorithmFactory factory = new LineSegmentAlgorithmFactory();
@@ -22,7 +25,7 @@ public class AlgorithmController {
 
     public List<CustomPoint> controlGeneratingCirclePoints(CustomPoint centerPoint,
                                                            CustomPoint radiusPoint) {
-        int radius = calculateDistanceBetweenPoints(centerPoint, radiusPoint);
+        int radius = calculator.calculateDistanceBetweenPoints(centerPoint, radiusPoint);
         CircleSpecification specification = new CircleSpecification(centerPoint, radius);
 
         FigureGenerator<CircleSpecification> generator = new CircleGenerator();
@@ -31,25 +34,11 @@ public class AlgorithmController {
 
     public List<CustomPoint> controlGeneratingEllipsePoints(CustomPoint centerPoint,
                                                             CustomPoint radiusPoint) {
-        int a = calculateDeltaX(centerPoint, radiusPoint);
-        int b = calculateDeltaY(centerPoint, radiusPoint);
+        int a = calculator.calculateDeltaX(centerPoint, radiusPoint);
+        int b = calculator.calculateDeltaY(centerPoint, radiusPoint);
         EllipseSpecification specification = new EllipseSpecification(centerPoint, a, b);
 
         FigureGenerator<EllipseSpecification> generator = new EllipseGenerator();
         return generator.generate(specification);
-    }
-
-    private int calculateDistanceBetweenPoints(CustomPoint point1, CustomPoint point2) {
-        int deltaX = calculateDeltaX(point1, point2);
-        int deltaY = calculateDeltaY(point1, point2);
-        return (int) Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-    }
-
-    private int calculateDeltaX(CustomPoint point1, CustomPoint point2) {
-        return (int) Math.abs(point2.getX() - point1.getX());
-    }
-
-    private int calculateDeltaY(CustomPoint point1, CustomPoint point2) {
-        return (int) Math.abs(point2.getY() - point1.getY());
     }
 }
