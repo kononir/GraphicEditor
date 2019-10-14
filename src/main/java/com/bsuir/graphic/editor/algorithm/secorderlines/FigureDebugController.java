@@ -7,7 +7,6 @@ import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.EllipseGe
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.CircleSpecification;
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.EllipseSpecification;
 import com.bsuir.graphic.editor.model.CustomPoint;
-import com.bsuir.graphic.editor.util.point.PointsCalculator;
 
 import java.util.List;
 import java.util.ListIterator;
@@ -18,22 +17,18 @@ public class FigureDebugController {
 
     private ListIterator<CustomPoint> debugIterator;
 
-    public void controlStartingDebug(List<CustomPoint> points, AlgorithmType type) {
-        PointsCalculator calculator = new PointsCalculator();
-
+    public void controlStartingDebug(CustomPoint center, List<Integer> radius, AlgorithmType type) {
         switch (type) {
             case CIRCLE_GENERATION_ALGORITHM:
-                int radius = calculator.calculateDistanceBetweenPoints(points.get(FIRST), points.get(SECOND));
-                CircleSpecification circleSpecification = new CircleSpecification(points.get(FIRST), radius);
+                CircleSpecification circleSpecification = new CircleSpecification(center, radius.get(FIRST));
                 debugIterator = new CircleGenerator().generateDebug(circleSpecification);
                 break;
             case ELLIPSE_GENERATION_ALGORITHM:
-                int a = calculator.calculateDeltaX(points.get(FIRST), points.get(SECOND));
-                int b = calculator.calculateDeltaY(points.get(FIRST), points.get(SECOND));
-                EllipseSpecification ellipseSpecification = new EllipseSpecification(points.get(FIRST), a, b);
+                EllipseSpecification ellipseSpecification
+                        = new EllipseSpecification(center, radius.get(FIRST), radius.get(SECOND));
                 debugIterator = new EllipseGenerator().generateDebug(ellipseSpecification);
                 break;
-            case FIGURE_GENERATION_ALGORITHM:
+            case HYPERBOLE_GENERATION_ALGORITHM:
                 break;
         }
     }

@@ -6,6 +6,12 @@ import com.bsuir.graphic.editor.algorithm.linesegment.bresenham.BDebugController
 import com.bsuir.graphic.editor.algorithm.linesegment.dda.DdaDebugController;
 import com.bsuir.graphic.editor.algorithm.linesegment.wu.WuDebugController;
 import com.bsuir.graphic.editor.algorithm.secorderlines.FigureDebugController;
+import com.bsuir.graphic.editor.listener.MousePressAndReleaseListener;
+import com.bsuir.graphic.editor.model.CustomPoint;
+import com.bsuir.graphic.editor.ui.debug.*;
+import com.bsuir.graphic.editor.util.debug.BresenhamAlgorithmDebugInfo;
+import com.bsuir.graphic.editor.util.debug.DdaAlgorithmDebugInfo;
+import com.bsuir.graphic.editor.util.debug.WuAlgorithmDebugInfo;
 import com.bsuir.graphic.editor.util.point.CanvasDrawer;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -21,23 +27,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import com.bsuir.graphic.editor.listener.MousePressAndReleaseListener;
-import com.bsuir.graphic.editor.model.CustomPoint;
-import com.bsuir.graphic.editor.ui.debug.DebugAlert;
-import com.bsuir.graphic.editor.ui.debug.DebugButtonType;
-import com.bsuir.graphic.editor.ui.debug.DebugTableBuilder;
-import com.bsuir.graphic.editor.ui.debug.DebugTextFieldType;
-import com.bsuir.graphic.editor.util.debug.BresenhamAlgorithmDebugInfo;
-import com.bsuir.graphic.editor.util.debug.DdaAlgorithmDebugInfo;
-import com.bsuir.graphic.editor.util.debug.WuAlgorithmDebugInfo;
 
 import java.util.*;
 
 public class MainWindow {
     private static final int TOOL_BUTTONS_SIZE = 150;
-    private static final int DEBUG_TEXT_FIELD_SIZE = 100;
 
     private CanvasDrawer canvasDrawer;
     private ToggleGroup tools = new ToggleGroup();
@@ -48,7 +43,6 @@ public class MainWindow {
     private TableView debugTable = new TableView();
     private GridPane debugInputGridPane = new GridPane();
     private Map<DebugButtonType, Button> debugButtonsMap = new EnumMap<>(DebugButtonType.class);
-    private Map<DebugTextFieldType, TextField> debugTextFieldMap = new EnumMap<>(DebugTextFieldType.class);
 
     private Map<ToolButtonType, ButtonBase> toolButtonsMap = new EnumMap<>(ToolButtonType.class);
 
@@ -117,9 +111,15 @@ public class MainWindow {
         ellipseButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         ellipseButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
+        ToggleButton hyperboleButton = new ToggleButton(AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.getName());
+        hyperboleButton.setToggleGroup(tools);
+        hyperboleButton.setUserData(AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM);
+        hyperboleButton.setPrefWidth(TOOL_BUTTONS_SIZE);
+        hyperboleButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
+
         Label secondOrderLinesLabel = new Label("Second order lines");
 
-        VBox secondOrderLinesVBox = new VBox(circleButton, ellipseButton, secondOrderLinesLabel);
+        VBox secondOrderLinesVBox = new VBox(circleButton, ellipseButton, hyperboleButton, secondOrderLinesLabel);
         secondOrderLinesVBox.setSpacing(5);
 
         Button eraserButton = new Button("Eraser");
@@ -145,7 +145,7 @@ public class MainWindow {
         canvas.setHeight(506);
         canvas.setWidth(1000);
 
-        MousePressAndReleaseListener.setUp(canvas, tools);
+        MousePressAndReleaseListener.setUp(canvas, tools, debugButton);
 
         canvasDrawer = new CanvasDrawer(canvas);
         canvasDrawer.fillCanvas();
@@ -172,44 +172,10 @@ public class MainWindow {
         secondLineDebugButtonsHBox.setSpacing(10);
         secondLineDebugButtonsHBox.setAlignment(Pos.CENTER);
 
-        Label x1Label = new Label("x1:");
-        x1Label.setTextAlignment(TextAlignment.RIGHT);
-        TextField x1TextField = new TextField();
-        x1TextField.setPrefWidth(DEBUG_TEXT_FIELD_SIZE);
-        debugTextFieldMap.put(DebugTextFieldType.X1, x1TextField);
-
-        Label y1Label = new Label("y1:");
-        y1Label.setTextAlignment(TextAlignment.RIGHT);
-        TextField y1TextField = new TextField();
-        y1TextField.setPrefWidth(DEBUG_TEXT_FIELD_SIZE);
-        debugTextFieldMap.put(DebugTextFieldType.Y1, y1TextField);
-
-        Label x2Label = new Label("x2:");
-        x2Label.setTextAlignment(TextAlignment.RIGHT);
-        TextField x2TextField = new TextField();
-        x2TextField.setPrefWidth(DEBUG_TEXT_FIELD_SIZE);
-        debugTextFieldMap.put(DebugTextFieldType.X2, x2TextField);
-
-        Label y2Label = new Label("y2:");
-        y2Label.setTextAlignment(TextAlignment.RIGHT);
-        TextField y2TextField = new TextField();
-        y2TextField.setPrefWidth(DEBUG_TEXT_FIELD_SIZE);
-        debugTextFieldMap.put(DebugTextFieldType.Y2, y2TextField);
-
         debugInputGridPane.setPrefSize(300, 20);
         debugInputGridPane.setPadding(new Insets(0, 5, 0, 5));
         debugInputGridPane.setHgap(10);
         debugInputGridPane.setVgap(5);
-
-        debugInputGridPane.add(x1Label, 0, 0);
-        debugInputGridPane.add(x1TextField, 1, 0);
-        debugInputGridPane.add(y1Label, 2, 0);
-        debugInputGridPane.add(y1TextField, 3, 0);
-        debugInputGridPane.add(x2Label, 0, 1);
-        debugInputGridPane.add(x2TextField, 1, 1);
-        debugInputGridPane.add(y2Label, 2, 1);
-        debugInputGridPane.add(y2TextField, 3, 1);
-
         debugInputGridPane.setAlignment(Pos.CENTER);
 
         VBox debugActiveArea = new VBox(debugInputGridPane, firstLineDebugButtonsHBox, secondLineDebugButtonsHBox);
@@ -320,12 +286,15 @@ public class MainWindow {
 
         Button startDebugButton = debugButtonsMap.get(DebugButtonType.START_DEBUG);
 
+        DebugInputBuilder builder = new DebugInputBuilder();
+        Map<DebugTextFieldType, TextField> debugTextFieldMap = builder.build(debugInputGridPane, algorithmType);
+
         showAllFromMainStream(Arrays.asList(debugTable, debugInputGridPane, startDebugButton));
 
-        startDebugButton.setOnAction(event1 -> startDebug(algorithmType));
+        startDebugButton.setOnAction(event1 -> startDebug(algorithmType, debugTextFieldMap));
     }
 
-    private void startDebug(AlgorithmType algorithmType) {
+    private void startDebug(AlgorithmType algorithmType, Map<DebugTextFieldType, TextField> debugTextFieldMap) {
         /* Disable menu and tool bars */
         menuBar.setDisable(true);
         toolBar.setDisable(true);
@@ -336,38 +305,12 @@ public class MainWindow {
         canvasDrawer.fillCanvas();
         canvasDrawer.drawGrid(CanvasDrawer.BIG_POINT_SIZE);
 
-        TextField x1TextField = debugTextFieldMap.get(DebugTextFieldType.X1);
-        TextField y1TextField = debugTextFieldMap.get(DebugTextFieldType.Y1);
-        TextField x2TextField = debugTextFieldMap.get(DebugTextFieldType.X2);
-        TextField y2TextField = debugTextFieldMap.get(DebugTextFieldType.Y2);
-
-        CustomPoint startingPoint = new CustomPoint(
-                Double.parseDouble(x1TextField.getText()),
-                Double.parseDouble(y1TextField.getText()),
-                0,
-                0,
-                Color.BLACK
-        );
-        CustomPoint endingPoint = new CustomPoint(
-                Double.parseDouble(x2TextField.getText()),
-                Double.parseDouble(y2TextField.getText()),
-                0,
-                0,
-                Color.BLACK
-        );
-
-        switch (algorithmType) {
-            case DDA:
-                ddaDebugController.controlStartingDebug(startingPoint, endingPoint);
+        switch (algorithmType.getGroup()) {
+            case LINE_SEGMENT_ALGORITHMS:
+                startLineSegmentDebug(algorithmType, debugTextFieldMap);
                 break;
-            case BRESENHAM_ALGORITHM:
-                bDebugController.controlStartingDebug(startingPoint, endingPoint);
-                break;
-            case WU_ALGORITHM:
-                wuDebugController.controlStartingDebug(startingPoint, endingPoint);
-                break;
-            case CIRCLE_GENERATION_ALGORITHM:
-                figureDebugController.controlStartingDebug(Arrays.asList(startingPoint, endingPoint), algorithmType);
+            case SEC_ORDER_LINE_ALGORITHMS:
+                startSecondOrderLinesDebug(algorithmType, debugTextFieldMap);
                 break;
             default:
                 throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
@@ -387,6 +330,71 @@ public class MainWindow {
             canvasDrawer.fillCanvas();
             finishDebug();
         });
+    }
+
+    private void startLineSegmentDebug(AlgorithmType algorithmType,
+                                       Map<DebugTextFieldType, TextField> debugTextFieldMap) {
+        TextField x1TextField = debugTextFieldMap.get(DebugTextFieldType.X1);
+        TextField y1TextField = debugTextFieldMap.get(DebugTextFieldType.Y1);
+        TextField x2TextField = debugTextFieldMap.get(DebugTextFieldType.X2);
+        TextField y2TextField = debugTextFieldMap.get(DebugTextFieldType.Y2);
+
+        CustomPoint startingPoint = CustomPoint.simplePoint(
+                Double.parseDouble(x1TextField.getText()),
+                Double.parseDouble(y1TextField.getText()),
+                Color.BLACK
+        );
+        CustomPoint endingPoint = CustomPoint.simplePoint(
+                Double.parseDouble(x2TextField.getText()),
+                Double.parseDouble(y2TextField.getText()),
+                Color.BLACK
+        );
+
+        switch (algorithmType) {
+            case DDA:
+                ddaDebugController.controlStartingDebug(startingPoint, endingPoint);
+                break;
+            case BRESENHAM_ALGORITHM:
+                bDebugController.controlStartingDebug(startingPoint, endingPoint);
+                break;
+            case WU_ALGORITHM:
+                wuDebugController.controlStartingDebug(startingPoint, endingPoint);
+                break;
+            default:
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+        }
+    }
+
+    private void startSecondOrderLinesDebug(AlgorithmType algorithmType,
+                                            Map<DebugTextFieldType, TextField> debugTextFieldMap) {
+        TextField xTextField = debugTextFieldMap.get(DebugTextFieldType.X);
+        TextField yTextField = debugTextFieldMap.get(DebugTextFieldType.Y);
+
+        CustomPoint centerPoint = CustomPoint.simplePoint(
+                Double.parseDouble(xTextField.getText()),
+                Double.parseDouble(yTextField.getText()),
+                Color.BLACK
+        );
+
+        switch (algorithmType) {
+            case CIRCLE_GENERATION_ALGORITHM:
+                TextField radiusTextField = debugTextFieldMap.get(DebugTextFieldType.RADIUS);
+                Integer radius = Integer.valueOf(radiusTextField.getText());
+                figureDebugController.controlStartingDebug(centerPoint,
+                        Collections.singletonList(radius), algorithmType);
+                break;
+            case ELLIPSE_GENERATION_ALGORITHM:
+            case HYPERBOLE_GENERATION_ALGORITHM:
+                TextField aEllipseTextField = debugTextFieldMap.get(DebugTextFieldType.A);
+                Integer a = Integer.valueOf(aEllipseTextField.getText());
+                TextField bEllipseTextField = debugTextFieldMap.get(DebugTextFieldType.B);
+                Integer b = Integer.valueOf(bEllipseTextField.getText());
+                figureDebugController.controlStartingDebug(centerPoint,
+                        Arrays.asList(a, b), algorithmType);
+                break;
+            default:
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+        }
     }
 
     private void prevStepOfDebug(AlgorithmType algorithmType) {

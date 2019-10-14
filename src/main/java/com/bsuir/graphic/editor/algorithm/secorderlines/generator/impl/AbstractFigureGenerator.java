@@ -8,7 +8,7 @@ import java.util.*;
 
 public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
     protected List<CustomPoint> reflectFirstOctantXY(List<CustomPoint> firstOctantPoints) {
-        int shiftSize = 1;
+        int shiftSize = 0;
         int lastPointIndex = firstOctantPoints.size() - 1;
 
         List<CustomPoint> secondOctantPoints = new ArrayList<>();
@@ -39,7 +39,7 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
     }
 
     protected List<CustomPoint> reflectFirstQuadrantOY(List<CustomPoint> firstQuadrantPoints) {
-        int shiftSize = 1;
+        int shiftSize = 0;
         int lastPointIndex = firstQuadrantPoints.size() - 1;
 
         List<CustomPoint> secondQuadrantPoints = new ArrayList<>();
@@ -70,7 +70,7 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
     }
 
     protected List<CustomPoint> reflectUpperFigurePartOX(List<CustomPoint> upperFigurePartPoints) {
-        int shiftSize = 1;
+        int shiftSize = 0;
         int lastPointIndex = upperFigurePartPoints.size() - 1;
 
         List<CustomPoint> lowerSemicirclePoints = new ArrayList<>();

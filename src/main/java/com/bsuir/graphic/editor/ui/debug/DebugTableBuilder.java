@@ -34,6 +34,7 @@ public class DebugTableBuilder {
                 break;
             case CIRCLE_GENERATION_ALGORITHM:
             case ELLIPSE_GENERATION_ALGORITHM:
+            case HYPERBOLE_GENERATION_ALGORITHM:
                 newColumns = Collections.emptyList();
                 break;
             default:

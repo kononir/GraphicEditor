@@ -5,6 +5,7 @@ import com.bsuir.graphic.editor.algorithm.AlgorithmGroup;
 import com.bsuir.graphic.editor.algorithm.AlgorithmType;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import com.bsuir.graphic.editor.model.CustomPoint;
@@ -19,7 +20,7 @@ public class MousePressAndReleaseListener {
     private static CustomPoint first;
     private static List<CustomPoint> previousPoints = new ArrayList<>();
 
-    public static void setUp(Canvas canvas, ToggleGroup toggleGroup) {
+    public static void setUp(Canvas canvas, ToggleGroup toggleGroup, ToggleButton debugButton) {
         canvas.setOnMousePressed(event -> {
             first = new CustomPoint(event.getX(), event.getY(), 0, 0, Color.BLACK);
             previousPoints.clear();
@@ -27,7 +28,7 @@ public class MousePressAndReleaseListener {
 
         canvas.setOnMouseDragged(event -> {
             Optional<Toggle> selected = Optional.ofNullable(toggleGroup.getSelectedToggle());
-            selected.ifPresent(toggle -> {
+            if (selected.isPresent() && !debugButton.isSelected()) {
                 CanvasDrawer drawer = new CanvasDrawer(canvas);
 
                 /* clearing previous */
@@ -36,13 +37,13 @@ public class MousePressAndReleaseListener {
                 }
 
                 CustomPoint second = new CustomPoint(event.getX(), event.getY(), 0, 0, Color.BLACK);
-                previousPoints = generateFigure(toggle, second);
+                previousPoints = generateFigure(selected.get(), second);
 
                 /* drawing */
                 for (CustomPoint point : previousPoints) {
                     drawer.drawPoint(point);
                 }
-            });
+            }
         });
     }
 
@@ -59,7 +60,7 @@ public class MousePressAndReleaseListener {
             figurePoints = controller.controlGeneratingCirclePoints(first, second);
         } else if (AlgorithmType.ELLIPSE_GENERATION_ALGORITHM.equals(selectedAlgorithm)) {
             figurePoints = controller.controlGeneratingEllipsePoints(first, second);
-        } else if (AlgorithmType.FIGURE_GENERATION_ALGORITHM.equals(selectedAlgorithm)){
+        } else if (AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.equals(selectedAlgorithm)){
             // parabola or hyperbole
             figurePoints = Collections.emptyList();
         } else {
