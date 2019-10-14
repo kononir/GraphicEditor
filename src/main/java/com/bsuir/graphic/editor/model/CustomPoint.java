@@ -41,4 +41,24 @@ public class CustomPoint {
     public Color getColor() {
         return color;
     }
+
+    @Override
+    public int hashCode() {
+        return 13 * (int) x + (int) y + (int) z + (int) t + color.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (this.getClass() != obj.getClass()) return false;
+
+        CustomPoint p = (CustomPoint) obj;
+        return x == p.x && y == p.y && z == p.z && t == p.t && color.equals(p.color);
+    }
+
+    @Override
+    public String toString() {
+        return "CustomPoint@ x = " + x + ";y = " + y + ";z = " + z + ";t = " + t
+                + ";color = " + color.toString();
+    }
 }

@@ -61,8 +61,7 @@ public class MousePressAndReleaseListener {
         } else if (AlgorithmType.ELLIPSE_GENERATION_ALGORITHM.equals(selectedAlgorithm)) {
             figurePoints = controller.controlGeneratingEllipsePoints(first, second);
         } else if (AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.equals(selectedAlgorithm)){
-            // parabola or hyperbole
-            figurePoints = Collections.emptyList();
+            figurePoints = controller.controlGeneratingHyperbolePoints(first, second);
         } else {
             figurePoints = Collections.emptyList();
         }

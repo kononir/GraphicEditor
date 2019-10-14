@@ -4,8 +4,10 @@ import com.bsuir.graphic.editor.algorithm.AlgorithmType;
 import com.bsuir.graphic.editor.algorithm.DebugControllerException;
 import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.CircleGenerator;
 import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.EllipseGenerator;
+import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.HyperboleGenerator;
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.CircleSpecification;
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.EllipseSpecification;
+import com.bsuir.graphic.editor.algorithm.secorderlines.specification.HyperboleSpecification;
 import com.bsuir.graphic.editor.model.CustomPoint;
 
 import java.util.List;
@@ -29,6 +31,9 @@ public class FigureDebugController {
                 debugIterator = new EllipseGenerator().generateDebug(ellipseSpecification);
                 break;
             case HYPERBOLE_GENERATION_ALGORITHM:
+                HyperboleSpecification hyperboleSpecification
+                        = new HyperboleSpecification(center, radius.get(FIRST), radius.get(SECOND));
+                debugIterator = new HyperboleGenerator().generateDebug(hyperboleSpecification);
                 break;
         }
     }
@@ -42,7 +47,7 @@ public class FigureDebugController {
     }
 
     public CustomPoint controlPrevStep() throws DebugControllerException {
-        if (debugIterator.hasNext()) {
+        if (debugIterator.hasPrevious()) {
             return debugIterator.previous();
         } else {
             throw new DebugControllerException("Reached first step!");

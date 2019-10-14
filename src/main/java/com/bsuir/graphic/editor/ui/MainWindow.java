@@ -420,6 +420,8 @@ public class MainWindow {
                     }
                     break;
                 case CIRCLE_GENERATION_ALGORITHM:
+                case ELLIPSE_GENERATION_ALGORITHM:
+                case HYPERBOLE_GENERATION_ALGORITHM:
                     CustomPoint currPointCircle = figureDebugController.controlPrevStep();
                     canvasDrawer.deleteBigPoint(currPointCircle);
                     break;
@@ -466,6 +468,8 @@ public class MainWindow {
                     }
                     break;
                 case CIRCLE_GENERATION_ALGORITHM:
+                case ELLIPSE_GENERATION_ALGORITHM:
+                case HYPERBOLE_GENERATION_ALGORITHM:
                     CustomPoint circlePoint = figureDebugController.controlNextStep();
                     canvasDrawer.drawBigPoint(circlePoint);
                     break;

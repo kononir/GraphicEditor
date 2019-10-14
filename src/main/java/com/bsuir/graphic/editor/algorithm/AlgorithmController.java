@@ -5,8 +5,10 @@ import com.bsuir.graphic.editor.algorithm.linesegment.LineSegmentAlgorithmFactor
 import com.bsuir.graphic.editor.algorithm.secorderlines.generator.FigureGenerator;
 import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.CircleGenerator;
 import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.EllipseGenerator;
+import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.HyperboleGenerator;
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.CircleSpecification;
 import com.bsuir.graphic.editor.algorithm.secorderlines.specification.EllipseSpecification;
+import com.bsuir.graphic.editor.algorithm.secorderlines.specification.HyperboleSpecification;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.util.point.PointsCalculator;
 
@@ -39,6 +41,16 @@ public class AlgorithmController {
         EllipseSpecification specification = new EllipseSpecification(centerPoint, a, b);
 
         FigureGenerator<EllipseSpecification> generator = new EllipseGenerator();
+        return generator.generate(specification);
+    }
+
+    public List<CustomPoint> controlGeneratingHyperbolePoints(CustomPoint centerPoint,
+                                                              CustomPoint radiusPoint) {
+        int a = calculator.calculateDeltaX(centerPoint, radiusPoint);
+        int b = calculator.calculateDeltaY(centerPoint, radiusPoint);
+        HyperboleSpecification specification = new HyperboleSpecification(centerPoint, a, b);
+
+        FigureGenerator<HyperboleSpecification> generator = new HyperboleGenerator();
         return generator.generate(specification);
     }
 }

@@ -16,8 +16,7 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
         CustomPoint center = specification.getCenterPoint();
         int radius = specification.getRadius();
         if (radius > 0) {
-            List<CustomPoint> firstOctantPoints = generateFirstOctant(center, radius);
-            List<CustomPoint> firstQuadrantPoints = reflectFirstOctantXY(firstOctantPoints);
+            List<CustomPoint> firstQuadrantPoints = generateFirstQuadrant(center, radius);
             List<CustomPoint> upperSemicirclePoints = reflectFirstQuadrantOY(firstQuadrantPoints);
             circlePoints = reflectUpperFigurePartOX(upperSemicirclePoints);
         } else {
@@ -27,16 +26,14 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
         return circlePoints;
     }
 
-    private List<CustomPoint> generateFirstOctant(CustomPoint centerPoint, int radius) {
+    private List<CustomPoint> generateFirstQuadrant(CustomPoint centerPoint, int radius) {
         List<CustomPoint> points = new ArrayList<>();
 
-        // begin - x and y start coordinate of first octant
-        int begin = (int) (radius / Math.sqrt(2) + 0.5);
-        int x = begin;
-        int y = begin;
+        int x = 0;
+        int y = radius;
         int e = 2 - 2 * radius;
 
-        //points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.BLACK));
+        points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.GREEN));
 
         int limit = 0;
         while (y > limit) {
@@ -66,7 +63,7 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
                 e = e + 2 * x - 2 * y + 2;
             }
 
-            points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.BLACK));
+            points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.RED));
         }
 
         return points;

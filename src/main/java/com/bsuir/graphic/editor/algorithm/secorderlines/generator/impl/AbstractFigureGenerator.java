@@ -102,6 +102,7 @@ public abstract class AbstractFigureGenerator<T> implements FigureGenerator<T> {
 
     @Override
     public ListIterator<CustomPoint> generateDebug(T specification) {
-        return new LinkedList<>(generate(specification)).listIterator();
+        Set<CustomPoint> distinctPoints = new LinkedHashSet<>(generate(specification));
+        return new LinkedList<>(distinctPoints).listIterator();
     }
 }
