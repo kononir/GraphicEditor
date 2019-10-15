@@ -21,16 +21,16 @@ public class EllipseGenerator extends AbstractFigureGenerator<EllipseSpecificati
         int b = specification.getB();
         if (a != 0 && b != 0) {
             List<CustomPoint> firstQuadrantPoints = generateFirstQuadrant(center, a, b);
-            List<CustomPoint> upperSemiEllipsePoints = reflectFirstQuadrantOY(firstQuadrantPoints);
-            ellipsePoints = reflectUpperFigurePartOX(upperSemiEllipsePoints);
+            List<CustomPoint> upperSemiEllipsePoints = reflectOY(firstQuadrantPoints, center);
+            ellipsePoints = reflectOX(upperSemiEllipsePoints, center);
         } else if (a == 0 && b != 0) {
             CustomPoint right = CustomPoint.simplePoint(center.getX(), center.getY() + b, Color.BLACK);
             List<CustomPoint> rightLineSegmentPart = lineSegmentAlgorithm.generateLineSegment(center, right);
-            ellipsePoints = reflectUpperFigurePartOX(rightLineSegmentPart);
+            ellipsePoints = reflectOX(rightLineSegmentPart, center);
         } else {
             CustomPoint upper = CustomPoint.simplePoint(center.getX() + a, center.getY(), Color.BLACK);
             List<CustomPoint> upperLineSegmentPart = lineSegmentAlgorithm.generateLineSegment(center, upper);
-            ellipsePoints = reflectFirstQuadrantOY(upperLineSegmentPart);
+            ellipsePoints = reflectOY(upperLineSegmentPart, center);
         }
 
         return ellipsePoints;

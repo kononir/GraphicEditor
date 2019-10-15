@@ -32,7 +32,7 @@ public class FigureDebugController {
                 break;
             case HYPERBOLE_GENERATION_ALGORITHM:
                 HyperboleSpecification hyperboleSpecification
-                        = new HyperboleSpecification(center, radius.get(FIRST), radius.get(SECOND));
+                        = new HyperboleSpecification(center, radius.get(FIRST), radius.get(SECOND), 650 / 10);
                 debugIterator = new HyperboleGenerator().generateDebug(hyperboleSpecification);
                 break;
         }

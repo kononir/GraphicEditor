@@ -17,10 +17,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class MousePressAndReleaseListener {
+    private static CanvasDrawer drawer;
+
     private static CustomPoint first;
     private static List<CustomPoint> previousPoints = new ArrayList<>();
 
     public static void setUp(Canvas canvas, ToggleGroup toggleGroup, ToggleButton debugButton) {
+        drawer = new CanvasDrawer(canvas);
+
         canvas.setOnMousePressed(event -> {
             first = new CustomPoint(event.getX(), event.getY(), 0, 0, Color.BLACK);
             previousPoints.clear();
@@ -29,8 +33,6 @@ public class MousePressAndReleaseListener {
         canvas.setOnMouseDragged(event -> {
             Optional<Toggle> selected = Optional.ofNullable(toggleGroup.getSelectedToggle());
             if (selected.isPresent() && !debugButton.isSelected()) {
-                CanvasDrawer drawer = new CanvasDrawer(canvas);
-
                 /* clearing previous */
                 for (CustomPoint point : previousPoints) {
                     drawer.deletePoint(point);
@@ -60,8 +62,9 @@ public class MousePressAndReleaseListener {
             figurePoints = controller.controlGeneratingCirclePoints(first, second);
         } else if (AlgorithmType.ELLIPSE_GENERATION_ALGORITHM.equals(selectedAlgorithm)) {
             figurePoints = controller.controlGeneratingEllipsePoints(first, second);
-        } else if (AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.equals(selectedAlgorithm)){
-            figurePoints = controller.controlGeneratingHyperbolePoints(first, second);
+        } else if (AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.equals(selectedAlgorithm)) {
+            int limit = (int) drawer.getDrawingSpaceHeight();
+            figurePoints = controller.controlGeneratingHyperbolePoints(first, second, limit);
         } else {
             figurePoints = Collections.emptyList();
         }

@@ -17,8 +17,8 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
         int radius = specification.getRadius();
         if (radius > 0) {
             List<CustomPoint> firstQuadrantPoints = generateFirstQuadrant(center, radius);
-            List<CustomPoint> upperSemicirclePoints = reflectFirstQuadrantOY(firstQuadrantPoints);
-            circlePoints = reflectUpperFigurePartOX(upperSemicirclePoints);
+            List<CustomPoint> upperSemicirclePoints = reflectOY(firstQuadrantPoints, center);
+            circlePoints = reflectOX(upperSemicirclePoints, center);
         } else {
             circlePoints = Collections.singletonList(center);
         }
@@ -33,7 +33,7 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
         int y = radius;
         int e = 2 - 2 * radius;
 
-        points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.GREEN));
+        points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.BLACK));
 
         int limit = 0;
         while (y > limit) {
@@ -63,7 +63,7 @@ public class CircleGenerator extends AbstractFigureGenerator<CircleSpecification
                 e = e + 2 * x - 2 * y + 2;
             }
 
-            points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.RED));
+            points.add(new CustomPoint(x + centerPoint.getX(), y + centerPoint.getY(), 0, 0, Color.BLACK));
         }
 
         return points;

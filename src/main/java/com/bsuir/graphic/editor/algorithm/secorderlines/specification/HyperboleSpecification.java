@@ -6,11 +6,13 @@ public class HyperboleSpecification {
     private CustomPoint centerPoint;
     private int a;
     private int b;
+    private int limit;
 
-    public HyperboleSpecification(CustomPoint centerPoint, int a, int b) {
+    public HyperboleSpecification(CustomPoint centerPoint, int a, int b, int limit) {
         this.centerPoint = centerPoint;
         this.a = a;
         this.b = b;
+        this.limit = limit;
     }
 
     public CustomPoint getCenterPoint() {
@@ -23,5 +25,9 @@ public class HyperboleSpecification {
 
     public int getB() {
         return b;
+    }
+
+    public int getLimit() {
+        return limit;
     }
 }

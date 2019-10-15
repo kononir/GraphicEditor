@@ -45,10 +45,10 @@ public class AlgorithmController {
     }
 
     public List<CustomPoint> controlGeneratingHyperbolePoints(CustomPoint centerPoint,
-                                                              CustomPoint radiusPoint) {
+                                                              CustomPoint radiusPoint, int limit) {
         int a = calculator.calculateDeltaX(centerPoint, radiusPoint);
         int b = calculator.calculateDeltaY(centerPoint, radiusPoint);
-        HyperboleSpecification specification = new HyperboleSpecification(centerPoint, a, b);
+        HyperboleSpecification specification = new HyperboleSpecification(centerPoint, a, b, limit);
 
         FigureGenerator<HyperboleSpecification> generator = new HyperboleGenerator();
         return generator.generate(specification);
