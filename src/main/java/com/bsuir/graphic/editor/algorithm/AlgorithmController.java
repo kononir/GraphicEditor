@@ -2,15 +2,15 @@ package com.bsuir.graphic.editor.algorithm;
 
 import com.bsuir.graphic.editor.algorithm.linesegment.LineSegmentAlgorithm;
 import com.bsuir.graphic.editor.algorithm.linesegment.LineSegmentAlgorithmFactory;
-import com.bsuir.graphic.editor.algorithm.secorderlines.generator.FigureGenerator;
-import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.CircleGenerator;
-import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.EllipseGenerator;
-import com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl.HyperboleGenerator;
-import com.bsuir.graphic.editor.algorithm.secorderlines.specification.CircleSpecification;
-import com.bsuir.graphic.editor.algorithm.secorderlines.specification.EllipseSpecification;
-import com.bsuir.graphic.editor.algorithm.secorderlines.specification.HyperboleSpecification;
+import com.bsuir.graphic.editor.algorithm.secorderline.generator.FigureGenerator;
+import com.bsuir.graphic.editor.algorithm.secorderline.generator.impl.CircleGenerator;
+import com.bsuir.graphic.editor.algorithm.secorderline.generator.impl.EllipseGenerator;
+import com.bsuir.graphic.editor.algorithm.secorderline.generator.impl.HyperboleGenerator;
+import com.bsuir.graphic.editor.algorithm.secorderline.specification.CircleSpecification;
+import com.bsuir.graphic.editor.algorithm.secorderline.specification.EllipseSpecification;
+import com.bsuir.graphic.editor.algorithm.secorderline.specification.HyperboleSpecification;
 import com.bsuir.graphic.editor.model.CustomPoint;
-import com.bsuir.graphic.editor.util.point.PointsCalculator;
+import com.bsuir.graphic.editor.util.calculation.PointsCalculator;
 
 import java.util.List;
 

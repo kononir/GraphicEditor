@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="">
+    <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="Wrote">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineGenerationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineGeneratorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/MatrixCalculationsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/MatrixCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/FigureDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/FigureDebugController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/AbstractFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/AbstractFigureGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/CircleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/CircleGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/EllipseGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/EllipseGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/HyperboleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/HyperboleGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/HyperboleSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/HyperboleSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/FigureDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/FigureDebugController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/FigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/FigureGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/AbstractFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/AbstractFigureGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/CircleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/CircleGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/EllipseGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/EllipseGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/HyperboleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/HyperboleGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/CircleSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/specification/CircleSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/EllipseSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/specification/EllipseSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/HyperboleSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/specification/HyperboleSpecification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndReleaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndReleaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/point/CanvasDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/point/CanvasDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/point/CanvasDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/ui/CanvasDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/point/PointsCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/PointsCalculator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +54,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -164,7 +179,9 @@
       <workItem from="1570797410930" duration="5391000" />
       <workItem from="1570813715360" duration="17000" />
       <workItem from="1571055214477" duration="16351000" />
-      <workItem from="1571143682377" duration="8327000" />
+      <workItem from="1571143682377" duration="9033000" />
+      <workItem from="1571206455462" duration="43000" />
+      <workItem from="1571464719577" duration="8281000" />
     </task>
     <task id="LOCAL-00001" summary="Initiate repo. Wrote application skeleton and few UI">
       <created>1567673572588</created>
@@ -271,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571089034749</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Finished hyperbole generation; fixed colors in circle debug; &#10;rewrote figure reflection">
+      <created>1571171618274</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571171618274</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +330,8 @@
     <MESSAGE value="Added big points drawing at debug (10x10); started circle and ellipse debug" />
     <MESSAGE value="Wrote input builder and in whole change debug data entering;&#10;Fixed debug drawings" />
     <MESSAGE value="Started writing hyperbole generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started writing hyperbole generator" />
+    <MESSAGE value="Finished hyperbole generation; fixed colors in circle debug; &#10;rewrote figure reflection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished hyperbole generation; fixed colors in circle debug; &#10;rewrote figure reflection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

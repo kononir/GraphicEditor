@@ -1,4 +1,4 @@
-package com.bsuir.graphic.editor.algorithm.secorderlines.specification;
+package com.bsuir.graphic.editor.algorithm.secorderline.specification;
 
 import com.bsuir.graphic.editor.model.CustomPoint;
 

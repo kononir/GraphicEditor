@@ -1,4 +1,4 @@
-package com.bsuir.graphic.editor.util.point;
+package com.bsuir.graphic.editor.util.calculation;
 
 import com.bsuir.graphic.editor.model.CustomPoint;
 

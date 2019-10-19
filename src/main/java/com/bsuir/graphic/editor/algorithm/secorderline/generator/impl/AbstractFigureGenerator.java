@@ -1,6 +1,6 @@
-package com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl;
+package com.bsuir.graphic.editor.algorithm.secorderline.generator.impl;
 
-import com.bsuir.graphic.editor.algorithm.secorderlines.generator.FigureGenerator;
+import com.bsuir.graphic.editor.algorithm.secorderline.generator.FigureGenerator;
 import com.bsuir.graphic.editor.model.CustomPoint;
 
 import java.util.*;

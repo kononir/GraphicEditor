@@ -1,8 +1,8 @@
-package com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl;
+package com.bsuir.graphic.editor.algorithm.secorderline.generator.impl;
 
 import com.bsuir.graphic.editor.algorithm.linesegment.LineSegmentAlgorithm;
 import com.bsuir.graphic.editor.algorithm.linesegment.bresenham.BresenhamAlgorithm;
-import com.bsuir.graphic.editor.algorithm.secorderlines.specification.EllipseSpecification;
+import com.bsuir.graphic.editor.algorithm.secorderline.specification.EllipseSpecification;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import javafx.scene.paint.Color;
 

@@ -7,7 +7,11 @@ public enum AlgorithmType {
 
     CIRCLE_GENERATION_ALGORITHM("Circle algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS),
     ELLIPSE_GENERATION_ALGORITHM("Ellipse algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS),
-    HYPERBOLE_GENERATION_ALGORITHM("Hyperbole algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS);
+    HYPERBOLE_GENERATION_ALGORITHM("Hyperbole algorithm", AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS),
+
+    HERMIT_INTERPOLATION_ALGORITHM("Hermit shape", AlgorithmGroup.CURVE_LINE_ALGORITHMS),
+    BEZIER_INTERPOLATION_ALGORITHM("Bezier shape", AlgorithmGroup.CURVE_LINE_ALGORITHMS),
+    B_SPLINE_EXTRAPOLATION_ALGORITHM("B-spline", AlgorithmGroup.CURVE_LINE_ALGORITHMS);
 
     private String name;
     private AlgorithmGroup group;

@@ -1,6 +1,6 @@
-package com.bsuir.graphic.editor.algorithm.secorderlines.generator.impl;
+package com.bsuir.graphic.editor.algorithm.secorderline.generator.impl;
 
-import com.bsuir.graphic.editor.algorithm.secorderlines.specification.HyperboleSpecification;
+import com.bsuir.graphic.editor.algorithm.secorderline.specification.HyperboleSpecification;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import javafx.scene.paint.Color;
 
@@ -28,7 +28,7 @@ public class HyperboleGenerator extends AbstractFigureGenerator<HyperboleSpecifi
     private List<CustomPoint> generateOneFourth(CustomPoint centerPoint, int a, int b, int limit) {
         List<CustomPoint> points = new ArrayList<>();
 
-        int x = a;
+        int x = a / 2;
         int y = 0;
 
         int a2 = a * a;

@@ -1,8 +1,7 @@
-package com.bsuir.graphic.editor.algorithm.secorderlines.generator;
+package com.bsuir.graphic.editor.algorithm.secorderline.generator;
 
 import com.bsuir.graphic.editor.model.CustomPoint;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
