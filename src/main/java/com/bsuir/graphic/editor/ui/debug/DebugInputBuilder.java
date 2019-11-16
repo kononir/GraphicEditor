@@ -129,7 +129,7 @@ public class DebugInputBuilder {
                 debugTextFieldMap.put(DebugTextFieldType.B, bTextField);
                 break;
             default:
-                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.toString());
         }
 
         for(int i = 0; i < labels.size(); i++) {

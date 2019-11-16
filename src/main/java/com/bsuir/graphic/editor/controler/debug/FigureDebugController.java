@@ -1,7 +1,6 @@
-package com.bsuir.graphic.editor.algorithm.secorderline;
+package com.bsuir.graphic.editor.controler.debug;
 
 import com.bsuir.graphic.editor.algorithm.AlgorithmType;
-import com.bsuir.graphic.editor.algorithm.DebugControllerException;
 import com.bsuir.graphic.editor.algorithm.secorderline.generator.impl.CircleGenerator;
 import com.bsuir.graphic.editor.algorithm.secorderline.generator.impl.EllipseGenerator;
 import com.bsuir.graphic.editor.algorithm.secorderline.generator.impl.HyperboleGenerator;

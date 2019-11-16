@@ -1,11 +1,13 @@
 package com.bsuir.graphic.editor.ui;
 
+import com.bsuir.graphic.editor.algorithm.AlgorithmGroup;
 import com.bsuir.graphic.editor.algorithm.AlgorithmType;
-import com.bsuir.graphic.editor.algorithm.DebugControllerException;
-import com.bsuir.graphic.editor.algorithm.linesegment.bresenham.BDebugController;
-import com.bsuir.graphic.editor.algorithm.linesegment.dda.DdaDebugController;
-import com.bsuir.graphic.editor.algorithm.linesegment.wu.WuDebugController;
-import com.bsuir.graphic.editor.algorithm.secorderline.FigureDebugController;
+import com.bsuir.graphic.editor.controler.debug.DebugControllerException;
+import com.bsuir.graphic.editor.controler.debug.FigureDebugController;
+import com.bsuir.graphic.editor.controler.debug.linesegment.BDebugController;
+import com.bsuir.graphic.editor.controler.debug.linesegment.DdaDebugController;
+import com.bsuir.graphic.editor.controler.debug.linesegment.WuDebugController;
+import com.bsuir.graphic.editor.listener.MouseDraggablePointsClickListener;
 import com.bsuir.graphic.editor.listener.MousePressAndReleaseListener;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.ui.debug.*;
@@ -22,11 +24,11 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import java.util.*;
@@ -53,102 +55,154 @@ public class MainWindow {
     private FigureDebugController figureDebugController = new FigureDebugController();
 
     public MainWindow(Stage primaryStage) {
-        MenuItem ddaMenuItem = new MenuItem(AlgorithmType.DDA.getName());
+        MenuItem ddaMenuItem = new MenuItem(AlgorithmType.DDA.toString());
         ddaMenuItem.setOnAction(event -> {
             selectToggle(AlgorithmType.DDA);
             chooseDebugActionForAlgorithmButton();
         });
 
-        MenuItem bresenhamMenuItem = new MenuItem(AlgorithmType.BRESENHAM_ALGORITHM.getName());
+        MenuItem bresenhamMenuItem = new MenuItem(AlgorithmType.BRESENHAM_ALGORITHM.toString());
         bresenhamMenuItem.setOnAction(event -> {
             selectToggle(AlgorithmType.BRESENHAM_ALGORITHM);
             chooseDebugActionForAlgorithmButton();
         });
 
-        MenuItem wuMenuItem = new MenuItem(AlgorithmType.WU_ALGORITHM.getName());
+        MenuItem wuMenuItem = new MenuItem(AlgorithmType.WU_ALGORITHM.toString());
         wuMenuItem.setOnAction(event -> {
             selectToggle(AlgorithmType.WU_ALGORITHM);
             chooseDebugActionForAlgorithmButton();
         });
 
-        Menu lineSegmentMenu = new Menu("Line segment");
+        Menu lineSegmentMenu = new Menu(AlgorithmGroup.LINE_SEGMENT_ALGORITHMS.toString());
         lineSegmentMenu.getItems().addAll(ddaMenuItem, bresenhamMenuItem, wuMenuItem);
 
         menuBar.getMenus().add(lineSegmentMenu);
 
-        ToggleButton ddaButton = new ToggleButton(AlgorithmType.DDA.getName());
+        ToggleButton ddaButton = new ToggleButton(AlgorithmType.DDA.toString());
         ddaButton.setToggleGroup(tools);
         ddaButton.setUserData(AlgorithmType.DDA);
         ddaButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         ddaButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
-        ToggleButton bresenhamButton = new ToggleButton(AlgorithmType.BRESENHAM_ALGORITHM.getName());
+        ToggleButton bresenhamButton = new ToggleButton(AlgorithmType.BRESENHAM_ALGORITHM.toString());
         bresenhamButton.setToggleGroup(tools);
         bresenhamButton.setUserData(AlgorithmType.BRESENHAM_ALGORITHM);
         bresenhamButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         bresenhamButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
-        ToggleButton wuButton = new ToggleButton(AlgorithmType.WU_ALGORITHM.getName());
+        ToggleButton wuButton = new ToggleButton(AlgorithmType.WU_ALGORITHM.toString());
         wuButton.setToggleGroup(tools);
         wuButton.setUserData(AlgorithmType.WU_ALGORITHM);
         wuButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         wuButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
-        Label lineSegmentLabel = new Label("Line segment");
+        TextFlow lineSegmentLabel = new TextFlow(new Text(AlgorithmGroup.LINE_SEGMENT_ALGORITHMS.toString()));
+        lineSegmentLabel.setTextAlignment(TextAlignment.CENTER);
+        VBox.setVgrow(lineSegmentLabel, Priority.ALWAYS);
 
-        VBox lineSegmentVBox = new VBox(ddaButton, bresenhamButton, wuButton, lineSegmentLabel);
+        VBox lineSegmentVBox = new VBox(ddaButton, bresenhamButton, wuButton);
         lineSegmentVBox.setSpacing(5);
+        BorderPane lineSegmentPane = new BorderPane();
+        lineSegmentPane.setTop(lineSegmentVBox);
+        lineSegmentPane.setBottom(lineSegmentLabel);
 
-        ToggleButton circleButton = new ToggleButton(AlgorithmType.CIRCLE_GENERATION_ALGORITHM.getName());
+        ToggleButton circleButton = new ToggleButton(AlgorithmType.CIRCLE_GENERATION_ALGORITHM.toString());
+        circleButton.setGraphic(new ImageView(new Image("img/circle.png")));
         circleButton.setToggleGroup(tools);
         circleButton.setUserData(AlgorithmType.CIRCLE_GENERATION_ALGORITHM);
         circleButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         circleButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
-        ToggleButton ellipseButton = new ToggleButton(AlgorithmType.ELLIPSE_GENERATION_ALGORITHM.getName());
+        ToggleButton ellipseButton = new ToggleButton(AlgorithmType.ELLIPSE_GENERATION_ALGORITHM.toString());
+        ellipseButton.setGraphic(new ImageView(new Image("img/ellipse.png")));
         ellipseButton.setToggleGroup(tools);
         ellipseButton.setUserData(AlgorithmType.ELLIPSE_GENERATION_ALGORITHM);
         ellipseButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         ellipseButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
-        ToggleButton hyperboleButton = new ToggleButton(AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.getName());
+        ToggleButton hyperboleButton = new ToggleButton(AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.toString());
         hyperboleButton.setToggleGroup(tools);
         hyperboleButton.setUserData(AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM);
         hyperboleButton.setPrefWidth(TOOL_BUTTONS_SIZE);
         hyperboleButton.setOnAction(event -> chooseDebugActionForAlgorithmButton());
 
-        Label secondOrderLinesLabel = new Label("Second order lines");
+        TextFlow secondOrderLinesText = new TextFlow(new Text(AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS.toString()));
+        secondOrderLinesText.setTextAlignment(TextAlignment.CENTER);
 
-        VBox secondOrderLinesVBox = new VBox(circleButton, ellipseButton, hyperboleButton, secondOrderLinesLabel);
+        VBox secondOrderLinesVBox = new VBox(circleButton, ellipseButton, hyperboleButton);
         secondOrderLinesVBox.setSpacing(5);
+        BorderPane secondOrderLinesPane = new BorderPane();
+        secondOrderLinesPane.setTop(secondOrderLinesVBox);
+        secondOrderLinesPane.setBottom(secondOrderLinesText);
+
+        ToggleButton hermitButton = new ToggleButton(AlgorithmType.HERMIT_INTERPOLATION_ALGORITHM.toString());
+        hermitButton.setToggleGroup(tools);
+        hermitButton.setUserData(AlgorithmType.HERMIT_INTERPOLATION_ALGORITHM);
+        hermitButton.setPrefWidth(TOOL_BUTTONS_SIZE);
+
+        ToggleButton bezierButton = new ToggleButton(AlgorithmType.BEZIER_INTERPOLATION_ALGORITHM.toString());
+        bezierButton.setToggleGroup(tools);
+        bezierButton.setUserData(AlgorithmType.BEZIER_INTERPOLATION_ALGORITHM);
+        bezierButton.setPrefWidth(TOOL_BUTTONS_SIZE);
+
+        ToggleButton bButton = new ToggleButton(AlgorithmType.B_SPLINE_EXTRAPOLATION_ALGORITHM.toString());
+        bButton.setToggleGroup(tools);
+        bButton.setUserData(AlgorithmType.B_SPLINE_EXTRAPOLATION_ALGORITHM);
+        bButton.setPrefWidth(TOOL_BUTTONS_SIZE);
+
+        TextFlow curveLinesLabel = new TextFlow(new Text(AlgorithmGroup.CURVE_LINE_ALGORITHMS.toString()));
+        curveLinesLabel.setTextAlignment(TextAlignment.CENTER);
+
+        VBox curveLinesVBox = new VBox(hermitButton, bezierButton, bButton);
+        curveLinesVBox.setSpacing(5);
+        BorderPane curveLinesPane = new BorderPane();
+        curveLinesPane.setTop(curveLinesVBox);
+        curveLinesPane.setBottom(curveLinesLabel);
 
         Button eraserButton = new Button("Eraser");
         eraserButton.setGraphic(new ImageView(new Image("img/eraser.png")));
-        eraserButton.setOnAction(event -> canvasDrawer.fillCanvas());
+        eraserButton.setOnAction(event -> canvasDrawer.clear());
+        eraserButton.setPrefWidth(TOOL_BUTTONS_SIZE);
 
         ToggleButton debugButton = new ToggleButton("Debug");
         toolButtonsMap.put(ToolButtonType.DEBUG, debugButton);
         debugButton.setGraphic(new ImageView(new Image("img/debug.png")));
         debugButton.setOnAction(event -> chooseDebugActionForDebugButton());
+        debugButton.setPrefWidth(TOOL_BUTTONS_SIZE);
+
+        TextFlow toolsLabel = new TextFlow(new Text("Tools"));
+        toolsLabel.setTextAlignment(TextAlignment.CENTER);
+        VBox.setVgrow(toolsLabel, Priority.ALWAYS);
+
+        VBox toolsVBox = new VBox(eraserButton, debugButton);
+        toolsVBox.setSpacing(5);
+        BorderPane toolsPane = new BorderPane();
+        toolsPane.setTop(toolsVBox);
+        toolsPane.setBottom(toolsLabel);
 
         toolBar.getItems().addAll(
-                lineSegmentVBox,
+                lineSegmentPane,
                 new Separator(),
-                secondOrderLinesVBox,
+                secondOrderLinesPane,
                 new Separator(),
-                eraserButton,
+                curveLinesPane,
                 new Separator(),
-                debugButton
+                toolsPane
         );
 
         Canvas canvas = new Canvas();
-        canvas.setHeight(506);
-        canvas.setWidth(1000);
+        canvas.setHeight(540);
+        canvas.setWidth(1050);
 
-        MousePressAndReleaseListener.setUp(canvas, tools, debugButton);
+        Pane actionPane = new Pane();
+        actionPane.setPrefHeight(540);
+        actionPane.setPrefWidth(1050);
 
-        canvasDrawer = new CanvasDrawer(canvas);
-        canvasDrawer.fillCanvas();
+        canvasDrawer = new CanvasDrawer(canvas, actionPane);
+        canvasDrawer.clear();
+
+        MousePressAndReleaseListener.setUp(canvasDrawer, debugButton, tools);
+        MouseDraggablePointsClickListener.setUp(canvasDrawer, tools);
 
         debugTable.setPrefSize(300, 400);
 
@@ -185,17 +239,21 @@ public class MainWindow {
         debugComponentVBox.getChildren().addAll(debugTable, debugActiveArea);
         debugComponentVBox.setSpacing(5);
 
-        AnchorPane root = new AnchorPane(menuBar, toolBar, canvas, debugComponentVBox);
+        AnchorPane root = new AnchorPane(menuBar, toolBar, canvas, actionPane, debugComponentVBox);
         AnchorPane.setTopAnchor(menuBar, 0.0);
         AnchorPane.setLeftAnchor(menuBar, 0.0);
         AnchorPane.setRightAnchor(menuBar, 0.0);
         AnchorPane.setTopAnchor(toolBar, 25.0);
         AnchorPane.setLeftAnchor(toolBar, 0.0);
         AnchorPane.setRightAnchor(toolBar, 0.0);
-        AnchorPane.setTopAnchor(canvas, 144.0);
+        AnchorPane.setTopAnchor(canvas, 136.0);
         AnchorPane.setLeftAnchor(canvas, 0.0);
         AnchorPane.setRightAnchor(canvas, 0.0);
         AnchorPane.setBottomAnchor(canvas, 0.0);
+        AnchorPane.setTopAnchor(actionPane, 136.0);
+        AnchorPane.setLeftAnchor(actionPane, 0.0);
+        AnchorPane.setRightAnchor(actionPane, 0.0);
+        AnchorPane.setBottomAnchor(actionPane, 0.0);
         AnchorPane.setTopAnchor(debugComponentVBox, 144.0);
         AnchorPane.setRightAnchor(debugComponentVBox, 0.0);
         AnchorPane.setBottomAnchor(debugComponentVBox, 0.0);
@@ -205,14 +263,6 @@ public class MainWindow {
         ));
 
         Scene scene = new Scene(root, 1000, 650);
-        scene.widthProperty().addListener(((observable, oldValue, newValue) -> {
-            canvas.setWidth(scene.getWidth());
-            canvasDrawer.fillCanvas();
-        }));
-        scene.heightProperty().addListener(((observable, oldValue, newValue) -> {
-            canvas.setHeight(scene.getHeight() - 144);
-            canvasDrawer.fillCanvas();
-        }));
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -302,7 +352,7 @@ public class MainWindow {
         Button startDebugButton = debugButtonsMap.get(DebugButtonType.START_DEBUG);
         hideAllFromMainStream(Arrays.asList(startDebugButton, debugInputGridPane));
 
-        canvasDrawer.fillCanvas();
+        canvasDrawer.clear();
         canvasDrawer.drawGrid(CanvasDrawer.BIG_POINT_SIZE);
 
         switch (algorithmType.getGroup()) {
@@ -313,7 +363,7 @@ public class MainWindow {
                 startSecondOrderLinesDebug(algorithmType, debugTextFieldMap);
                 break;
             default:
-                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.toString());
         }
 
         Button prevStepButton = debugButtonsMap.get(DebugButtonType.PREV_STEP);
@@ -327,7 +377,7 @@ public class MainWindow {
         Button finishDebugButton = debugButtonsMap.get(DebugButtonType.FINISH_DEBUG);
         showAtMainStream(finishDebugButton);
         finishDebugButton.setOnAction(event2 -> {
-            canvasDrawer.fillCanvas();
+            canvasDrawer.clear();
             finishDebug();
         });
     }
@@ -361,7 +411,7 @@ public class MainWindow {
                 wuDebugController.controlStartingDebug(startingPoint, endingPoint);
                 break;
             default:
-                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.toString());
         }
     }
 
@@ -393,7 +443,7 @@ public class MainWindow {
                         Arrays.asList(a, b), algorithmType);
                 break;
             default:
-                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.toString());
         }
     }
 
@@ -426,7 +476,7 @@ public class MainWindow {
                     canvasDrawer.deleteBigPoint(currPointCircle);
                     break;
                 default:
-                    throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+                    throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.toString());
             }
         } catch (DebugControllerException e) {
             new DebugAlert().show(e.getMessage());
@@ -474,7 +524,7 @@ public class MainWindow {
                     canvasDrawer.drawBigPoint(circlePoint);
                     break;
                 default:
-                    throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+                    throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.toString());
             }
         } catch (DebugControllerException e) {
             new DebugAlert().show(e.getMessage());

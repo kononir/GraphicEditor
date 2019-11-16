@@ -1,6 +1,7 @@
-package com.bsuir.graphic.editor.algorithm.linesegment.dda;
+package com.bsuir.graphic.editor.controler.debug.linesegment;
 
-import com.bsuir.graphic.editor.algorithm.DebugControllerException;
+import com.bsuir.graphic.editor.controler.debug.DebugControllerException;
+import com.bsuir.graphic.editor.algorithm.linesegment.dda.DdaAlgorithmPointGenerator;
 import com.bsuir.graphic.editor.model.CustomPoint;
 import com.bsuir.graphic.editor.util.debug.DdaAlgorithmDebugInfo;
 

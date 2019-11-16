@@ -6,10 +6,16 @@ public class MatrixCalculator {
             throw new MatrixCalculationsException("Matrix sizes don't match");
         }
 
-        double[][] arr = new double[a.getHeight()][b.getWidth()];
-        for (int i = 0; i < a.getHeight(); i++) {
-            for (int j = 0; j < b.getWidth(); j++) {
-                arr[i][j] = a.el(i, j) * b.el(i, j);
+        int multNum = a.getWidth();
+        int height = a.getHeight();
+        int width = b.getWidth();
+
+        double[][] arr = new double[height][width];
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                for (int k = 0; k < multNum; k++) {
+                    arr[i][j] += a.el(i, k) * b.el(k, j);
+                }
             }
         }
 

@@ -1,74 +1,78 @@
 package com.bsuir.graphic.editor.listener;
 
-import com.bsuir.graphic.editor.algorithm.AlgorithmController;
 import com.bsuir.graphic.editor.algorithm.AlgorithmGroup;
 import com.bsuir.graphic.editor.algorithm.AlgorithmType;
-import javafx.scene.canvas.Canvas;
+import com.bsuir.graphic.editor.model.CustomPoint;
+import com.bsuir.graphic.editor.util.ui.CanvasDrawer;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
-import com.bsuir.graphic.editor.model.CustomPoint;
-import com.bsuir.graphic.editor.util.ui.CanvasDrawer;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 public class MousePressAndReleaseListener {
     private static CanvasDrawer drawer;
 
     private static CustomPoint first;
-    private static List<CustomPoint> previousPoints = new ArrayList<>();
 
-    public static void setUp(Canvas canvas, ToggleGroup toggleGroup, ToggleButton debugButton) {
-        drawer = new CanvasDrawer(canvas);
+    public static void setUp(CanvasDrawer drawer, ToggleButton debugButton, ToggleGroup toggleGroup) {
+        MousePressAndReleaseListener.drawer = drawer;
 
-        canvas.setOnMousePressed(event -> {
-            first = new CustomPoint(event.getX(), event.getY(), 0, 0, Color.BLACK);
-            previousPoints.clear();
+        drawer.setOnMousePressed(event ->
+                first = CustomPoint.simplePoint(event.getX(), event.getY(), Color.BLACK));
+
+        drawer.setOnMouseDragged(event -> {
+            Optional<Toggle> selected = Optional.ofNullable(toggleGroup.getSelectedToggle());
+            if (selected.isPresent() &&  !debugButton.isSelected()) {
+                AlgorithmType selectedAlgorithm = (AlgorithmType) selected.get().getUserData();
+                AlgorithmGroup algorithmGroup = selectedAlgorithm.getGroup();
+                if (AlgorithmGroup.LINE_SEGMENT_ALGORITHMS.equals(algorithmGroup)
+                        || (AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS.equals(algorithmGroup))) {
+                    drawer.rollbackToPreviousState();
+                    CustomPoint second
+                            = CustomPoint.simplePoint(event.getX(), event.getY(), Color.BLACK);
+                    draw(selectedAlgorithm, second);
+                }
+            }
         });
 
-        canvas.setOnMouseDragged(event -> {
+        drawer.setOnMouseReleased(event -> {
             Optional<Toggle> selected = Optional.ofNullable(toggleGroup.getSelectedToggle());
             if (selected.isPresent() && !debugButton.isSelected()) {
-                /* clearing previous */
-                for (CustomPoint point : previousPoints) {
-                    drawer.deletePoint(point);
-                }
-
-                CustomPoint second = new CustomPoint(event.getX(), event.getY(), 0, 0, Color.BLACK);
-                previousPoints = generateFigure(selected.get(), second);
-
-                /* drawing */
-                for (CustomPoint point : previousPoints) {
-                    drawer.drawPoint(point);
+                AlgorithmType selectedAlgorithm = (AlgorithmType) selected.get().getUserData();
+                AlgorithmGroup algorithmGroup = selectedAlgorithm.getGroup();
+                if (AlgorithmGroup.LINE_SEGMENT_ALGORITHMS.equals(algorithmGroup)
+                        || (AlgorithmGroup.SEC_ORDER_LINE_ALGORITHMS.equals(algorithmGroup))) {
+                    drawer.commitCurrentState();
                 }
             }
         });
     }
 
-    private static List<CustomPoint> generateFigure(Toggle toggle, CustomPoint second) {
-        List<CustomPoint> figurePoints;
-
-        AlgorithmType selectedAlgorithm = (AlgorithmType) toggle.getUserData();
-        AlgorithmController controller = new AlgorithmController();
-        if (AlgorithmGroup.LINE_SEGMENT_ALGORITHMS.equals(selectedAlgorithm.getGroup())) {
-            figurePoints = controller.controlGeneratingLineSegmentPoints(
-                    selectedAlgorithm, first, second
-            );
-        } else if (AlgorithmType.CIRCLE_GENERATION_ALGORITHM.equals(selectedAlgorithm)) {
-            figurePoints = controller.controlGeneratingCirclePoints(first, second);
-        } else if (AlgorithmType.ELLIPSE_GENERATION_ALGORITHM.equals(selectedAlgorithm)) {
-            figurePoints = controller.controlGeneratingEllipsePoints(first, second);
-        } else if (AlgorithmType.HYPERBOLE_GENERATION_ALGORITHM.equals(selectedAlgorithm)) {
-            int limit = (int) drawer.getDrawingSpaceHeight();
-            figurePoints = controller.controlGeneratingHyperbolePoints(first, second, limit);
-        } else {
-            figurePoints = Collections.emptyList();
+    private static void draw(AlgorithmType selectedAlgorithm, CustomPoint second) {
+        switch (selectedAlgorithm) {
+            case DDA:
+                drawer.drawDdaLineSegment(first, second);
+                break;
+            case BRESENHAM_ALGORITHM:
+                drawer.drawBresenhamLineSegment(first, second);
+                break;
+            case WU_ALGORITHM:
+                drawer.drawWuLineSegment(first, second);
+                break;
+            case CIRCLE_GENERATION_ALGORITHM:
+                drawer.drawCircle(first, second);
+                break;
+            case ELLIPSE_GENERATION_ALGORITHM:
+                drawer.drawEllipse(first, second);
+                break;
+            case HYPERBOLE_GENERATION_ALGORITHM:
+                drawer.drawHyperbole(first, second);
+                break;
+            default:
+                throw new EnumConstantNotPresentException(AlgorithmType.class,
+                        selectedAlgorithm.name());
         }
-
-        return figurePoints;
     }
 }

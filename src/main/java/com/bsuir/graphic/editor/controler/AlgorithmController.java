@@ -1,5 +1,10 @@
-package com.bsuir.graphic.editor.algorithm;
+package com.bsuir.graphic.editor.controler;
 
+import com.bsuir.graphic.editor.algorithm.AlgorithmType;
+import com.bsuir.graphic.editor.algorithm.curveline.CurveLineGenerator;
+import com.bsuir.graphic.editor.algorithm.curveline.CurveLineMatrix;
+import com.bsuir.graphic.editor.algorithm.curveline.impl.CurveLineExtrapolator;
+import com.bsuir.graphic.editor.algorithm.curveline.impl.CurveLineInterpolator;
 import com.bsuir.graphic.editor.algorithm.linesegment.LineSegmentAlgorithm;
 import com.bsuir.graphic.editor.algorithm.linesegment.LineSegmentAlgorithmFactory;
 import com.bsuir.graphic.editor.algorithm.secorderline.generator.FigureGenerator;
@@ -52,5 +57,20 @@ public class AlgorithmController {
 
         FigureGenerator<HyperboleSpecification> generator = new HyperboleGenerator();
         return generator.generate(specification);
+    }
+
+    public List<CustomPoint> controlGeneratingCubeSpline(List<CustomPoint> points) {
+        CurveLineGenerator generator = new CurveLineInterpolator();
+        return generator.generate(points, CurveLineMatrix.HERMITE_MATRIX.getValue(), 0.01);
+    }
+
+    public List<CustomPoint> controlGeneratingBezierShape(List<CustomPoint> points) {
+        CurveLineGenerator generator = new CurveLineInterpolator();
+        return generator.generate(points, CurveLineMatrix.BEZIER_MATRIX.getValue(), 0.01);
+    }
+
+    public List<CustomPoint> controlGeneratingBSpline(List<CustomPoint> points) {
+        CurveLineGenerator generator = new CurveLineExtrapolator();
+        return generator.generate(points, CurveLineMatrix.B_MATRIX.getValue(), 0.01);
     }
 }

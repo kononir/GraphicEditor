@@ -38,7 +38,7 @@ public class DebugTableBuilder {
                 newColumns = Collections.emptyList();
                 break;
             default:
-                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.getName());
+                throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.toString());
         }
 
         ObservableList<TableColumn> columns = debugTable.getColumns();

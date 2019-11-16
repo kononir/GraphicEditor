@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="Wrote">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineGenerationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineGeneratorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineMatrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/Matrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/MatrixCalculationsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/MatrixCalculator.java" afterDir="false" />
+    <list default="true" id="610a6dcb-7953-4fc0-b522-c12c3fda1dec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/impl/AbstractCurveLineGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/impl/CurveLineExtrapolator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MouseDraggablePointsClickListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/ellipse.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/controler/AlgorithmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/AlgorithmType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/FigureDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/FigureDebugController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/FigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/FigureGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/AbstractFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/AbstractFigureGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/CircleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/CircleGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/EllipseGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/EllipseGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/generator/impl/HyperboleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/generator/impl/HyperboleGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/CircleSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/specification/CircleSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/EllipseSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/specification/EllipseSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderlines/specification/HyperboleSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/specification/HyperboleSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/DebugControllerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/controler/debug/DebugControllerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineGeneratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/impl/CurveLineInterpolator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/curveline/CurveLineMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/bresenham/BDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/controler/debug/linesegment/BDebugController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/dda/DdaDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/controler/debug/linesegment/DdaDebugController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/linesegment/wu/WuDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/controler/debug/linesegment/WuDebugController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/algorithm/secorderline/FigureDebugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/controler/debug/FigureDebugController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndReleaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/listener/MousePressAndReleaseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/point/CanvasDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/ui/CanvasDrawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/point/PointsCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/PointsCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugInputBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugInputBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/debug/DebugTableBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/MatrixCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/calculation/matrix/MatrixCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/ui/CanvasDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/util/ui/CanvasDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/debug.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/debug.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/eraser.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/eraser.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +56,8 @@
       <list>
         <option value="Interface" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,8 +72,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1RIogoAncPdjgvIoZfTG6DzYIqt" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -181,7 +184,12 @@
       <workItem from="1571055214477" duration="16351000" />
       <workItem from="1571143682377" duration="9033000" />
       <workItem from="1571206455462" duration="43000" />
-      <workItem from="1571464719577" duration="8281000" />
+      <workItem from="1571464719577" duration="15625000" />
+      <workItem from="1572267889921" duration="222000" />
+      <workItem from="1573446803382" duration="6172000" />
+      <workItem from="1573643167004" duration="100000" />
+      <workItem from="1573664577407" duration="58000" />
+      <workItem from="1573834591765" duration="25053000" />
     </task>
     <task id="LOCAL-00001" summary="Initiate repo. Wrote application skeleton and few UI">
       <created>1567673572588</created>
@@ -295,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571171618274</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Wrote curve line algorithms, working with matrix">
+      <created>1571499287800</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1571499287800</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +330,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initiate repo. Wrote application skeleton and few UI" />
     <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Wrote bresenham" />
@@ -331,18 +347,8 @@
     <MESSAGE value="Wrote input builder and in whole change debug data entering;&#10;Fixed debug drawings" />
     <MESSAGE value="Started writing hyperbole generator" />
     <MESSAGE value="Finished hyperbole generation; fixed colors in circle debug; &#10;rewrote figure reflection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished hyperbole generation; fixed colors in circle debug; &#10;rewrote figure reflection" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bsuir/graphic/editor/ui/MainWindow.java</url>
-          <line>424</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Wrote curve line algorithms, working with matrix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote curve line algorithms, working with matrix" />
   </component>
   <component name="masterDetails">
     <states>

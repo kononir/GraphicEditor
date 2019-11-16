@@ -28,7 +28,7 @@ public enum CurveLineMatrix {
         this.matrix = matrix;
     }
 
-    public Matrix getMatrix() {
+    public Matrix getValue() {
         return matrix;
     }
 }
