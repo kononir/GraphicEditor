@@ -69,8 +69,8 @@ public class AlgorithmController {
         return generator.generate(points, CurveLineMatrix.BEZIER_MATRIX.getValue(), 0.01);
     }
 
-    public List<CustomPoint> controlGeneratingBSpline(List<CustomPoint> points) {
-        CurveLineGenerator generator = new CurveLineExtrapolator();
+    public List<CustomPoint> controlGeneratingBSpline(List<CustomPoint> points, boolean isCircular) {
+        CurveLineGenerator generator = new CurveLineExtrapolator(isCircular);
         return generator.generate(points, CurveLineMatrix.B_MATRIX.getValue(), 0.01);
     }
 }

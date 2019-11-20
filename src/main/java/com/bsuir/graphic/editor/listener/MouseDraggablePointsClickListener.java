@@ -14,7 +14,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class MouseDraggablePointsClickListener {
-    private static final int MIN_NUMBER_OF_INTERPOLATION = 4;
+    private static final int MIN_NUMBER = 4;
+
+    private static boolean isCircular = false;
 
     private static CanvasDrawer drawer;
 
@@ -22,26 +24,26 @@ public class MouseDraggablePointsClickListener {
         MouseDraggablePointsClickListener.drawer = drawer;
 
         drawer.setOnMouseClicked(clickEvent -> {
-            MouseButton currButton = clickEvent.getButton();
-            if (MouseButton.PRIMARY.equals(currButton)) {
-                Optional<Toggle> selected = Optional.ofNullable(toggleGroup.getSelectedToggle());
-                selected.ifPresent(toggle -> {
-                    AlgorithmType algorithmType = (AlgorithmType) toggle.getUserData();
+            Optional<Toggle> selected = Optional.ofNullable(toggleGroup.getSelectedToggle());
+            selected.ifPresent(toggle -> {
+                AlgorithmType algorithmType = (AlgorithmType) toggle.getUserData();
+                MouseButton button = clickEvent.getButton();
+                if (clickEvent.getClickCount() == 2 && MouseButton.PRIMARY.equals(button)) {
+                    List<Circle> points = drawer.getShowedPoints();
+                    int pointsNumber = points.size() + 1;
+
                     switch (algorithmType) {
                         case HERMIT_INTERPOLATION_ALGORITHM:
                         case BEZIER_INTERPOLATION_ALGORITHM:
-                            List<Circle> points = drawer.getShowedPoints();
-
-                            int pointsNumber = points.size() + 1;
-                            if (pointsNumber <= MIN_NUMBER_OF_INTERPOLATION) {
+                            if (pointsNumber <= MIN_NUMBER) {
                                 Circle undraggable = createNewUndraggablePoint(clickEvent.getX(),
                                         clickEvent.getY());
                                 points.add(undraggable);
                             }
 
-                            if (pointsNumber == MIN_NUMBER_OF_INTERPOLATION) {
-                                for (Circle undraggable : points) {
-                                    createPointDraggable(undraggable, algorithmType);
+                            if (pointsNumber == MIN_NUMBER) {
+                                for (Circle point : points) {
+                                    createPointDraggable(point, algorithmType);
                                 }
 
                                 draw(algorithmType);
@@ -49,13 +51,38 @@ public class MouseDraggablePointsClickListener {
 
                             break;
                         case B_SPLINE_EXTRAPOLATION_ALGORITHM:
+                            Circle undraggable = createNewUndraggablePoint(clickEvent.getX(),
+                                    clickEvent.getY());
+                            points.add(undraggable);
+
+                            if (pointsNumber == MIN_NUMBER) {
+                                for (Circle point : points) {
+                                    createPointDraggable(point, algorithmType);
+                                }
+
+                                draw(algorithmType);
+                            } else if (pointsNumber > MIN_NUMBER) {
+                                drawer.rollbackToPreviousState();
+
+                                createPointDraggable(undraggable, algorithmType);
+
+                                draw(algorithmType);
+                            }
+
                             break;
                     }
-                });
-            } else if (MouseButton.SECONDARY.equals(currButton)) {
-                drawer.commitCurrentState();
-                drawer.removeAllShowedPoints();
-            }
+                } else if (MouseButton.SECONDARY.equals(button)) {
+                    drawer.commitCurrentState();
+                    drawer.removeAllShowedPoints();
+                } else if (MouseButton.MIDDLE.equals(clickEvent.getButton())
+                        && AlgorithmType.B_SPLINE_EXTRAPOLATION_ALGORITHM.equals(algorithmType)
+                        && drawer.getShowedPoints().size() >= MIN_NUMBER) {
+                    isCircular = !isCircular;
+
+                    drawer.rollbackToPreviousState();
+                    draw(algorithmType);
+                }
+            });
         });
     }
 
@@ -79,8 +106,10 @@ public class MouseDraggablePointsClickListener {
             draggable.setCenterY(newY);
 
             drawer.rollbackToPreviousState();
+
             draw(algorithmType);
         });
+
         drawer.drawShowedPoint(draggable);
     }
 
@@ -100,6 +129,7 @@ public class MouseDraggablePointsClickListener {
                 drawer.drawBezierShape(root);
                 break;
             case B_SPLINE_EXTRAPOLATION_ALGORITHM:
+                drawer.drawBSpline(root, isCircular);
                 break;
             default:
                 throw new EnumConstantNotPresentException(AlgorithmType.class, algorithmType.name());

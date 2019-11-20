@@ -21,8 +21,8 @@ import java.util.Set;
 public class CanvasDrawer {
     public static final int BIG_POINT_SIZE = 10;
 
-    Set<CustomPoint> currentState = new HashSet<>();
-    Set<CustomPoint> previousState = new HashSet<>();
+    private Set<CustomPoint> currentState = new HashSet<>();
+    private Set<CustomPoint> previousState = new HashSet<>();
 
     private Canvas canvas;
     private Pane actionPane;
@@ -158,6 +158,11 @@ public class CanvasDrawer {
 
     public void drawBezierShape(List<CustomPoint> root) {
         List<CustomPoint> points = algorithmController.controlGeneratingBezierShape(root);
+        drawPolygonalLine(points);
+    }
+
+    public void drawBSpline(List<CustomPoint> root, boolean isCircular) {
+        List<CustomPoint> points = algorithmController.controlGeneratingBSpline(root, isCircular);
         drawPolygonalLine(points);
     }
 
